@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.4.3",
-    "@svgr/webpack": "4.1.0",
+    "@babel/core": "7.4.4",
+    "@svgr/webpack": "4.2.0",
     "@types/jest": "24.0.12",
     "@types/node": "11.13.8",
     "@types/react": "16.8.15",
     "@types/react-dom": "16.8.4",
-    "@typescript-eslint/eslint-plugin": "1.6.0",
-    "@typescript-eslint/parser": "1.6.0",
+    "@typescript-eslint/eslint-plugin": "1.7.0",
+    "@typescript-eslint/parser": "1.7.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",
@@ -18,7 +18,7 @@
     "babel-preset-react-app": "^8.0.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
-    "dotenv": "6.2.0",
+    "dotenv": "7.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
@@ -61,24 +61,19 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      "> 1%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version"
     ]
   },
   "jest": {
@@ -130,5 +125,12 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
+  },
+  "proxy": "http://192.168.2.29:50051/",
+  "homepage": ""
 }
