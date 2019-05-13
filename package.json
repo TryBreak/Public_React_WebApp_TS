@@ -121,6 +121,10 @@
       "jest-watch-typeahead/testname"
     ]
   },
+  "devDependencies": {
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0"
+  },
   "babel": {
     "presets": [
       "react-app"
@@ -128,9 +132,11 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build": "npm run remove:build & node scripts/build.js",
+    "test": "node scripts/test.js",
+    "local-serve": "node scripts/server.js",
+    "remove:build": "rm -rf ./build"
   },
   "proxy": "http://192.168.2.29:50051/",
-  "homepage": ""
+  "homepage": "",
 }
