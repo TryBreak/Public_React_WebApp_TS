@@ -138,5 +138,5 @@
     "remove:build": "rm -rf ./build"
   },
   "proxy": "http://192.168.2.29:50051/",
-  "homepage": "",
+  "homepage": ""
 }
