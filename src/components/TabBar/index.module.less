@@ -1,0 +1,47 @@
+/*
+* @LastEditors: Mark
+* @Description: In User Settings Edit
+* @Author: Mark
+* @Date: 2019-05-05 14:59:32
+* @LastEditTime: 2019-05-07 17:27:47
+ */
+@import '../../assets/style/resize.less';
+.null {
+  .h(50);
+}
+
+.tabBar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .h(50);
+  background-color: #fff;
+  border: 1px solid rgba(238, 238, 238, 1);
+  box-sizing: border-box;
+  .l(0);
+  .b(0);
+  .item {
+    cursor: pointer;
+    text-align: center;
+    &.active {
+      .name {
+        color: #3989eb;
+      }
+    }
+
+    .icon {
+      display: block;
+      .w(20);
+      .h(20);
+      .m(0, auto);
+      .mb(3);
+    }
+    .name {
+      display: block;
+      .fs(10);
+      color: #999999;
+    }
+  }
+}
