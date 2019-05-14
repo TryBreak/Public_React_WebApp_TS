@@ -3,12 +3,12 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 18:26:13
+ * @LastEditTime: 2019-05-14 19:02:00
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import App from '@/App';
+import App from '@src/App';
 
 ReactDOM.render( <App />, document.getElementById( 'root' ) );
 
