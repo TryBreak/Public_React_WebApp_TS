@@ -1,10 +1,15 @@
+/*
+ * @LastEditors: Mark
+ * @Description: none
+ * @Author: Mark
+ * @Date: 2019-05-14 16:35:05
+ * @LastEditTime: 2019-05-14 17:33:07
+ */
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 const App: React.FC = () => {
-  console.log( 123 );
-
   return (
     <div className="App">
       <header className="App-header">
