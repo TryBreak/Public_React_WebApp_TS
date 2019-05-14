@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-14 17:11:57
+ * @LastEditTime: 2019-05-14 17:13:47
  -->
 
 # one-react-ts-web 项目说明
@@ -36,6 +36,7 @@ npm run local-serve
 ### VSCode 插件
 
 - ESlint
+- TSLint
 
 ### settings.json 设置
 
