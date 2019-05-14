@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-04-15 19:30:55
+ * @LastEditTime: 2019-05-14 19:36:29
  -->
 <!DOCTYPE html>
 <html lang="zh">
@@ -23,6 +23,20 @@
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>one-react-app</title>
+    <script>
+      //兼容 ie9
+      if (window["context"] == undefined) {
+        if (!window.location.origin) {
+          window.location.origin =
+            window.location.protocol +
+            "//" +
+            window.location.hostname +
+            (window.location.port ? ":" + window.location.port : "");
+        }
+        window["context"] = location.origin + "/V6.0";
+      }
+      //兼容 ie9 === end
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
