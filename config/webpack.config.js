@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 17:59:41
+ * @LastEditTime: 2019-05-14 18:02:18
  */
 const fs = require( 'fs' );
 const isWsl = require( 'is-wsl' );
@@ -273,6 +273,9 @@ module.exports = function ( webpackEnv ) {
       extensions: paths.moduleFileExtensions
         .map( ext => `.${ext}` )
         .filter( ext => useTypeScript || !ext.includes( 'ts' ) ),
+
+      extensions: ['.ts', '.tsx', '.js', 'config.js', '.json'],
+
       alias: {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
