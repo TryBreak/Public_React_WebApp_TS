@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-14 16:50:20
+ * @LastEditTime: 2019-05-14 16:59:21
  */
 
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
     'space-before-function-paren': 'error',
     //分号
     semi: ['error', 'always'],
-    // 'semi-spacing': ['error', { before: true, after: true }],
+    'semi-spacing': ['error', { before: false, after: false }],
     'semi-style': ['error', 'last'],
     //console
     'no-console': [
@@ -62,9 +62,9 @@ module.exports = {
     //构造函数首字母大写
     // 'new-cap': ['error', { newIsCap: true }],
     //括号内空格
-    // 'space-in-parens': ['error', 'always'],
+    'space-in-parens': ['error', 'always'],
     //对象属性排序
-    // 'sort-keys': 'error',
+    'sort-keys': 'error',
     //禁止使用嵌套的三元表达式
     'no-nested-ternary': 'error',
     //禁止混合缩进
@@ -109,8 +109,6 @@ module.exports = {
     'default-case': 'error',
     //点点和操作符
     'dot-location': ['error', 'property'],
-    //属性调用
-    // 'dot-notation': ['error', { allowKeywords: false }],
     //恒等号
     eqeqeq: ['error', 'always'],
     //for-in 中必须判断
@@ -143,14 +141,12 @@ module.exports = {
     //禁止在全局范围使用变量和函数声明
     'no-implicit-globals': 'error',
     //禁止 this 关键字在类或类对象之外出现
-    // 'no-invalid-this': 'error',
+    'no-invalid-this': 'error',
     //禁用迭代器
     'no-iterator': 'error',
     'no-labels': 'error',
     'no-lone-blocks': 'error',
     'no-loop-func': 'error',
-    //魔术数字
-    // 'no-magic-numbers': 'error',
     //多空格问题
     'no-multi-spaces': 'error',
     //多行字符串
