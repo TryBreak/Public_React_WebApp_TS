@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-14 17:37:30
+ * @LastEditTime: 2019-05-14 19:38:04
  -->
 
 # one-react-ts-web 项目说明
@@ -172,7 +172,6 @@ import curryN from 'lodash/fp/curryN';
 原因: 会降低可读性,增加复杂性
 
 数据处理和视图尽量分开,数据处理完毕之后再进入视图
-
 
 ## style
 

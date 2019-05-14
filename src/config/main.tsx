@@ -3,12 +3,13 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 19:32:08
+ * @LastEditTime: 2019-05-14 19:37:29
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import 'react-app-polyfill/ie9';
+import 'normalize.css';
 import App from '@/App';
 
 ReactDOM.render( <App />, document.getElementById( 'root' ) );
