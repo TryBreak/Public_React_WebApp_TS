@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-14 15:22:11
+ * @LastEditTime: 2019-05-14 17:11:57
  -->
 
 # one-react-ts-web 项目说明
@@ -11,6 +11,8 @@
 脚手架仓库地址 <https://github.com/facebook/create-react-app>
 
 官方文档 <https://facebook.github.io/create-react-app/>
+
+TypeScript 文档  <https://zhongsp.gitbooks.io/typescript-handbook/content/>
 
 ## 运行方式
 
@@ -29,9 +31,39 @@ npm run local-serve
 
 ```
 
-## 语法高亮和编辑器配置 `VSCode` 编辑器配置建议
+## 项目 ESlint 风格指南 , 以及 `VSCode` 编辑器配置建议
 
-## 脚手架定制化
+### VSCode 插件
+
+- ESlint
+
+### settings.json 设置
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+}
+
+```
 
 ## 状态管理和页面通信
 
