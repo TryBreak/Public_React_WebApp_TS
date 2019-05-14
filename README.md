@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-14 17:13:47
+ * @LastEditTime: 2019-05-14 17:19:03
  -->
 
 # one-react-ts-web 项目说明
@@ -65,6 +65,11 @@ npm run local-serve
 }
 
 ```
+## 脚手架定制化
+
+基于 `react-creat-app` 做了如下个性化定制
+
+- 添加 TypeScript 支持
 
 ## 状态管理和页面通信
 
