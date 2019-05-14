@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-14 17:19:03
+ * @LastEditTime: 2019-05-14 17:27:10
  -->
 
 # one-react-ts-web 项目说明
@@ -65,11 +65,14 @@ npm run local-serve
 }
 
 ```
+
 ## 脚手架定制化
 
 基于 `react-creat-app` 做了如下个性化定制
 
 - 添加 TypeScript 支持
+- 修改 `package.json`中的`browserslist`
+- 添加 `.env` 设定环境变量
 
 ## 状态管理和页面通信
 
