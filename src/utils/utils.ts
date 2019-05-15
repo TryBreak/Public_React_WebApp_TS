@@ -3,9 +3,10 @@
  * @Description: 常用的工具类函数
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 15:38:50
+ * @LastEditTime: 2019-05-15 15:41:39
  */
-// import axios from 'axios';
+import axios from 'axios';
+console.info( axios );
 
 // import Qs from 'qs';
 // import { baseUrl } from '../config/baseUrl';
