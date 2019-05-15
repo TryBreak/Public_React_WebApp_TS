@@ -3,16 +3,16 @@
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 13:54:35
+ * @LastEditTime: 2019-05-15 14:17:05
  */
 import routes from '@/pages/routes.ts';
 // import { localStore } from '@/utils/utils.js';
 
-export const getMainRoute = path => {
+export const getMainRoute = ( path: any ) => {
   return '/' + path.split( '/' )[1];
 };
 
-export const splitPath = path => {
+export const splitPath = ( path: any ) => {
   /**
    * @description: 将路由器额分成数组
    * @param path
@@ -33,7 +33,7 @@ export const splitPath = path => {
   return pathArr;
 };
 
-export const inspect404 = ( { pathname } ) => {
+export const inspect404 = ( { pathname }: any ) => {
   const nowPath = getMainRoute( pathname );
   /**
    * @description: 查找404页面
@@ -51,7 +51,7 @@ export const inspect404 = ( { pathname } ) => {
   return find;
 };
 
-export const recursion = pathArr => {
+export const recursion = ( pathArr: any ) => {
   const degree = pathArr.length;
 
   let returnRoutes = routes;
@@ -80,7 +80,7 @@ export const recursion = pathArr => {
   }
 };
 
-export const inspectRouter = ( { pathname } ) => {
+export const inspectRouter = ( { pathname }: any ) => {
   const pathArr = pathname.split( '/' );
   const routeList = recursion( pathArr );
 
@@ -88,7 +88,7 @@ export const inspectRouter = ( { pathname } ) => {
 };
 
 //匹配和查找路由,返回路由的配置信息
-export const fondRoute = pathname => {
+export const fondRoute = ( pathname: any ) => {
   const pathArr = splitPath( pathname );
   let nowRoutes = '';
   const degree = pathArr.length;
@@ -134,7 +134,7 @@ export const fondRoute = pathname => {
   }
 };
 
-export const isChildRoute = ( { father, child } ) => {
+export const isChildRoute = ( { father, child }: any ) => {
   const fatherArr = splitPath( father );
   const childArr = splitPath( child );
   const returnArr = [];

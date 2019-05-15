@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 13:53:19
+ * @LastEditTime: 2019-05-15 14:12:06
  */
 import _import from '@/utils/_import';
 const basePath = '';
@@ -25,7 +25,7 @@ const routes = [
     component: _import( basePath + '/Demo' ),
     from: fatherPath,
     // children: {
-    //   routes: _import( basePath + '/Demo/routes' ),
+    //   // routes: _import( basePath + '/Demo/routes' ),
     // },
   },
   {

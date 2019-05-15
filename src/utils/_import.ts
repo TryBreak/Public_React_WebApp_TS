@@ -1,4 +1,4 @@
-const _import = path => {
+const _import = ( path: string ) => {
   let Template = require( '@/pages' + path );
   if ( Template && Template.default ) {
     return Template.default;

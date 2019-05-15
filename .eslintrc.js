@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-15 13:52:51
+ * @LastEditTime: 2019-05-15 13:55:36
  */
 
 module.exports = {
@@ -136,8 +136,6 @@ module.exports = {
     'no-implicit-coercion': 'error',
     //禁止在全局范围使用变量和函数声明
     'no-implicit-globals': 'error',
-    //禁止 this 关键字在类或类对象之外出现
-    'no-invalid-this': 'error',
     //禁用迭代器
     'no-iterator': 'error',
     'no-labels': 'error',
