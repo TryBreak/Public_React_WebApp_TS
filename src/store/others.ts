@@ -8,7 +8,7 @@ class OthersStore {
   }
   @action
   getData = () => {
-    fetch( 'api/comments/show?id=4199740256395164&page=1' ).then( res => {
+    fetch( 'api/comments/show?id=4199740256395164&page=1' ).then( ( res ) => {
       res.json().then(
         action( ( data: any ) => {
           this.str = data.msg;

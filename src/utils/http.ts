@@ -19,11 +19,11 @@ const $axios_set_default = () => {
   service.defaults.timeout = 8000; //超时 8 秒
   //请求拦截
   service.interceptors.request.use(
-    config => {
+    ( config ) => {
       // console.info('请求开始');
       return config;
     },
-    error => {
+    ( error ) => {
       console.error( error );
       return Promise.reject( error );
     }
@@ -31,13 +31,13 @@ const $axios_set_default = () => {
 
   //响应拦截
   service.interceptors.response.use(
-    response => {
+    ( response ) => {
       // console.info('请求结束');
       const data = response.data;
       res_dispose( data );
       return data;
     },
-    error => {
+    ( error ) => {
       return Promise.reject( error );
     }
   );

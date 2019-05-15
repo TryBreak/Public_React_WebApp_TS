@@ -3,7 +3,7 @@
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 16:14:19
+ * @LastEditTime: 2019-05-15 17:03:55
  */
 import routes from '@/pages/routes';
 import { localStore } from '@/utils/utils';
@@ -42,7 +42,7 @@ export const inspect404 = ( { pathname }: any ) => {
    * }
    * @return: {}
    */
-  const find = routes.find( item => {
+  const find = routes.find( ( item ) => {
     return nowPath === item.path;
   } );
   if ( nowPath === '/inbox' ) {
