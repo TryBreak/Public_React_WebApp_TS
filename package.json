@@ -128,6 +128,8 @@
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "typescript": "^3.4.5"

@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-15 16:29:02
+ * @LastEditTime: 2019-05-15 16:54:02
  -->
 
 # one-react-ts-web 项目说明
@@ -130,25 +130,24 @@ store.js
 import { localStore } from '@/utils/utils.js';
 
 // Store current user
-store.set('user', { name: 'Marcus' });
+localStore.set('user', { name: 'Marcus' });
 
 // Get current user
-store.get('user');
+localStore.get('user');
 
 // Remove current user
-store.remove('user');
+localStore.remove('user');
 
 // Clear all keys
-store.clearAll();
+localStore.clearAll();
 
 // Loop over all stored values
-store.each(function(value, key) {
+localStore.each(function(value, key) {
   console.log(key, '==', value);
 });
 ```
 
 ## 实用工具库
-
 
 Lodash
 
