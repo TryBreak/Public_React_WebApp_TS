@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-15 13:55:36
+ * @LastEditTime: 2019-05-15 17:02:30
  */
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
     //使用单引号
     quotes: ['error', 'single'],
     //必须使用括号包裹箭头函数的参数
-    // 'arrow-parens': ['error', 'always'],
+    'arrow-parens': ['error', 'always'],
     //强制 generator 函数
     'generator-star-spacing': ['error', { before: false, after: true }],
     'no-debugger': 'error',
