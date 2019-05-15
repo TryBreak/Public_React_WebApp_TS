@@ -3,10 +3,10 @@
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 14:19:23
+ * @LastEditTime: 2019-05-15 14:46:18
  */
 import routes from '@/pages/routes.ts';
-// import { localStore } from '@/utils/utils.js';
+import { localStore } from '@/utils/utils.js';
 
 export const getMainRoute = ( path: any ) => {
   return '/' + path.split( '/' )[1];
@@ -150,18 +150,18 @@ export const isChildRoute = ( { father, child }: any ) => {
   return returnArr.length;
 };
 
-// 存储最近的30条路由访问记录
-// export const storagePath = ( history, pathname, option ) => {
-//   const opt = option || {};
-//   const num = opt.num || 30;
-//   // if (history.action === 'POP') {
-//   //   localStore.remove('pathArr');
-//   // }
-//   const pathArr = localStore.get( 'routerHistory' ) || [];
-//   pathArr.push( pathname );
-//   let storageArr = pathArr;
-//   if ( pathArr.length >= num ) {
-//     storageArr = pathArr.slice( pathArr.length - num, pathArr.length );
-//   }
-//   localStore.set( 'routerHistory', storageArr );
-// };
+// 存储最近的30条路由访问记录;
+export const storagePath = ( history: any, pathname: any, option: any ) => {
+  const opt = option || {};
+  const num = opt.num || 30;
+  // if (history.action === 'POP') {
+  //   localStore.remove('pathArr');
+  // }
+  const pathArr = localStore.get( 'routerHistory' ) || [];
+  pathArr.push( pathname );
+  let storageArr = pathArr;
+  if ( pathArr.length >= num ) {
+    storageArr = pathArr.slice( pathArr.length - num, pathArr.length );
+  }
+  localStore.set( 'routerHistory', storageArr );
+};
