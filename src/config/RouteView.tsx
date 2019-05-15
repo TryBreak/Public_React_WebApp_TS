@@ -3,7 +3,7 @@
  * @Description: 中心化的路由渲染插件
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 14:12:09
+ * @LastEditTime: 2019-05-15 14:21:11
  */
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
@@ -33,12 +33,12 @@ class RouteView extends Component {
   };
   render () {
     const { match } = this.props as any;
-    let routeList = this.findRoutes();
+    let routeList: any = this.findRoutes();
     const path = match.path;
-    return routeList.map( ( item, index ) => {
+    return routeList.map( ( item: any, index: any ) => {
       return (
         <Route
-          // exact={!item.children}
+          exact={!item.children}
           key={index}
           path={path + item.path}
           component={item.component}
