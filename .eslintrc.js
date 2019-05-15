@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-14 16:59:21
+ * @LastEditTime: 2019-05-15 13:52:51
  */
 
 module.exports = {
@@ -59,12 +59,8 @@ module.exports = {
     'no-duplicate-imports': 'error',
     //jsx中使用单引号
     'jsx-quotes': ['error', 'prefer-double'],
-    //构造函数首字母大写
-    // 'new-cap': ['error', { newIsCap: true }],
     //括号内空格
     'space-in-parens': ['error', 'always'],
-    //对象属性排序
-    'sort-keys': 'error',
     //禁止使用嵌套的三元表达式
     'no-nested-ternary': 'error',
     //禁止混合缩进
