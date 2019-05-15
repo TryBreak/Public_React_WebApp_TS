@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-15 16:31:48
+ * @LastEditTime: 2019-05-15 16:40:38
  */
 import React, { Component } from 'react';
 
@@ -27,7 +27,7 @@ import * as store from '@/store/index';
 import { $axios_set_default } from '@/utils/http';
 
 //TabBar
-// import TabBar from '@/components/TabBar';
+import TabBar from '@/components/TabBar';
 
 class App extends Component {
   constructor ( props: any ) {
@@ -75,6 +75,7 @@ class BaseRouter extends Component {
       <Provider store={store}>
         <Router>
           <Route exact component={App} />
+          <TabBar />
         </Router>
       </Provider>
     );

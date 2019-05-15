@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
- * @LastEditTime: 2019-05-15 16:39:39
+ * @LastEditTime: 2019-05-15 16:41:20
  */
 
 import React from 'react';
@@ -12,7 +12,7 @@ import { withRouter } from 'react-router';
 import { tab_icon } from './img/load';
 import styles from './index.module.less';
 
-import { isChildRoute } from '@/utils/inspectRouter.js';
+import { isChildRoute } from '@/utils/inspectRouter';
 
 class TabBar extends React.Component {
   static propTypes = {};
