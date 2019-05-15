@@ -3,7 +3,7 @@
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 14:17:05
+ * @LastEditTime: 2019-05-15 14:19:23
  */
 import routes from '@/pages/routes.ts';
 // import { localStore } from '@/utils/utils.js';
@@ -65,7 +65,7 @@ export const recursion = ( pathArr: any ) => {
   function find () {
     let path = '/' + pathArr[count];
     for ( let i = 0;i < returnRoutes.length;i++ ) {
-      const el = returnRoutes[i];
+      const el = returnRoutes[i] as any;
       if ( path === el.path ) {
         if ( el.children && el.children.routes ) {
           returnRoutes = el.children.routes;
@@ -90,7 +90,7 @@ export const inspectRouter = ( { pathname }: any ) => {
 //匹配和查找路由,返回路由的配置信息
 export const fondRoute = ( pathname: any ) => {
   const pathArr = splitPath( pathname );
-  let nowRoutes = '';
+  let nowRoutes: any = '';
   const degree = pathArr.length;
   let count = 0;
 
@@ -98,7 +98,7 @@ export const fondRoute = ( pathname: any ) => {
   for ( let i = 0;i < routes.length;i++ ) {
     const el = routes[i];
     if ( el.path === firstPath ) {
-      nowRoutes = el;
+      nowRoutes = el as any;
       break;
     }
   }
