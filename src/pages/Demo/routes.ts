@@ -29,14 +29,14 @@ const routes = [
     component: _import( basePath + '/RequestDemo' ),
     from: fatherPath,
   },
-  // {
-  //   path: '/mobox_demo',
-  //   name: 'Mobx演示',
-  //   description: '状态管理演示',
-  //   title: '二级路由-Mobox',
-  //   component: _import( basePath + '/MobxDemo/' ),
-  //   from: fatherPath,
-  // },
+  {
+    path: '/mobox_demo',
+    name: 'Mobx演示',
+    description: '状态管理演示',
+    title: '二级路由-Mobox',
+    component: _import( basePath + '/MobxDemo/' ),
+    from: fatherPath,
+  },
 ];
 
 export default routes;

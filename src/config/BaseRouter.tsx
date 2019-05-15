@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-15 16:15:18
+ * @LastEditTime: 2019-05-15 16:31:48
  */
 import React, { Component } from 'react';
 
@@ -20,8 +20,8 @@ import { project_detail } from '@/config/constants';
 import { fondRoute, splitPath, storagePath } from '@/utils/inspectRouter';
 
 // Mobx
-// import { Provider } from 'mobx-react';
-// import * as store from '@/store/index';
+import { Provider } from 'mobx-react';
+import * as store from '@/store/index';
 
 //加载请求的设置
 import { $axios_set_default } from '@/utils/http';
@@ -72,9 +72,11 @@ class App extends Component {
 class BaseRouter extends Component {
   render () {
     return (
-      <Router>
-        <Route exact component={App} />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Route exact component={App} />
+        </Router>
+      </Provider>
     );
   }
 }
