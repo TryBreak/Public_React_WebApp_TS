@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-15 15:34:48
+ * @LastEditTime: 2019-05-15 16:15:18
  */
 import React, { Component } from 'react';
 
@@ -17,23 +17,23 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Inbox from './Inbox'; //页面集合全路由展示
 import RouteView from './RouteView'; //路由渲染文件
 import { project_detail } from '@/config/constants';
-import { fondRoute, splitPath /* ,storagePath */ } from '@/utils/inspectRouter';
+import { fondRoute, splitPath, storagePath } from '@/utils/inspectRouter';
 
 // Mobx
 // import { Provider } from 'mobx-react';
 // import * as store from '@/store/index';
 
 //加载请求的设置
-// import { $axios_set_default } from '@/utils/http';
+import { $axios_set_default } from '@/utils/http';
 
 //TabBar
 // import TabBar from '@/components/TabBar';
 
 class App extends Component {
-  // constructor ( props: any ) {
-  //   super( props );
-  //   // $axios_set_default();
-  // }
+  constructor ( props: any ) {
+    super( props );
+    $axios_set_default();
+  }
   componentDidMount () {
     this.watchRouter();
   }
@@ -41,7 +41,7 @@ class App extends Component {
     this.watchRouter();
   }
   titleAnd404 = ( pathname: any ) => {
-    // storagePath( ( this.props as any ).history, pathname );
+    storagePath( ( this.props as any ).history, pathname );
 
     const nowRouter = fondRoute( pathname );
     const nowPath = splitPath( pathname );

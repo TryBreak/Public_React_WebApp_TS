@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-15 15:43:00
+ * @LastEditTime: 2019-05-15 16:10:11
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -13,9 +13,6 @@ import 'react-app-polyfill/ie9';
 import 'normalize.css';
 import '@/assets/style/reset.less';
 import BaseRouter from './BaseRouter';
-import * as xxx from '@/utils/utils';
-
-console.info( xxx );
 
 printVersion();
 
