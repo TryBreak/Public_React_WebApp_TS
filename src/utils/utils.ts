@@ -3,15 +3,13 @@
  * @Description: 常用的工具类函数
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 15:48:19
+ * @LastEditTime: 2019-05-15 16:08:52
  */
-import axios from 'axios';
 
-axios.get( 'https://www.baidu.com' );
-
-// import Qs from 'qs';
 // import { baseUrl } from '../config/baseUrl';
-// import store from 'store';
+import store from 'store';
+
+store.set( 'name', 123 );
 
 // export const localStore = store;
 
