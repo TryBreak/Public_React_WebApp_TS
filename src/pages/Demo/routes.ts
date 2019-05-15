@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 15:40:25
+ * @LastEditTime: 2019-05-15 16:18:51
  */
 import _import from '@/utils/_import';
 
@@ -21,14 +21,14 @@ const routes = [
       routes: _import( basePath + '/StyleDemo/routes' ),
     },
   },
-  // {
-  //   path: '/request_demo',
-  //   name: '请求演示',
-  //   description: '请求演示demo',
-  //   title: '二级路由-请求演示',
-  //   component: _import( basePath + '/RequestDemo' ),
-  //   from: fatherPath,
-  // },
+  {
+    path: '/request_demo',
+    name: '请求演示',
+    description: '请求演示demo',
+    title: '二级路由-请求演示',
+    component: _import( basePath + '/RequestDemo' ),
+    from: fatherPath,
+  },
   // {
   //   path: '/mobox_demo',
   //   name: 'Mobx演示',

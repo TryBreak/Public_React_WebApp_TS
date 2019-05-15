@@ -7,7 +7,7 @@ export const userLogin = async ( data: any ) => {
     data,
     method: 'post',
   } );
-  store.set( 'token', req.data.token );
+  store.set( 'token', 'req.data.token' );
   return req;
 };
 
