@@ -69,8 +69,3 @@ declare module '*.module.less' {
   const classes: { [key: string]: string };
   export default classes;
 }
-
-declare module 'axios' {
-  const axios: any;
-  export default axios;
-}
