@@ -3,18 +3,18 @@ import { observable, action } from 'mobx';
 class OthersStore {
   @observable str: any;
 
-  constructor () {
+  constructor() {
     this.str = '这个值来自其他模块';
   }
   @action
   getData = () => {
-    fetch( 'api/comments/show?id=4199740256395164&page=1' ).then( ( res ) => {
+    fetch('api/comments/show?id=4199740256395164&page=1').then((res) => {
       res.json().then(
-        action( ( data: any ) => {
+        action((data: any) => {
           this.str = data.msg;
-        } )
+        })
       );
-    } );
+    });
   };
 }
 
