@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-17 13:29:45
+ * @LastEditTime: 2019-05-17 14:40:15
  -->
 
 # one-react-ts-web 项目说明
@@ -63,7 +63,6 @@ npm run local-serve
     }
   ],
 }
-
 ```
 
 ## 脚手架定制化
