@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: 常用的工具类函数
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 16:12:20
+* @LastEditTime: 2019-05-17 14:00:48
  */
 
 import Qs from 'qs';
@@ -12,16 +12,16 @@ import store from 'store';
 
 export const localStore = store;
 
-export const getUrlParam = ( searchStr = window.location.search ) => {
+export const getUrlParam = (searchStr = window.location.search) => {
   /**
    * @description: 获取当前页面的路由或者指定页面的路由
    * @param null
    * @return: {*}
    */
-  return Qs.parse( searchStr, { ignoreQueryPrefix: true } );
+  return Qs.parse(searchStr, { ignoreQueryPrefix: true });
 };
 
-export const filterImageUrl = ( param: any ) => {
+export const filterImageUrl = (param: any) => {
   /**
    * @description: 图片链接过滤器,专门针对dookay接口制定
    * @param
@@ -31,15 +31,15 @@ export const filterImageUrl = ( param: any ) => {
    * @return:  url
   */
   let returnUrl = '';
-  if ( param.indexOf( '[{' ) > -1 ) {
-    const obj = JSON.parse( param );
+  if (param.indexOf('[{') > -1) {
+    const obj = JSON.parse(param);
     returnUrl = obj[0].file;
   } else {
     returnUrl = param;
   }
-  if ( returnUrl.indexOf( 'http' ) > -1 ) {
+  if (returnUrl.indexOf('http') > -1) {
   } else {
-    if ( returnUrl ) {
+    if (returnUrl) {
       returnUrl = baseUrl + returnUrl;
     } else {
       return '';
@@ -48,23 +48,23 @@ export const filterImageUrl = ( param: any ) => {
   return returnUrl;
 };
 
-export const formatDate = ( timeUnix: any ) => {
+export const formatDate = (timeUnix: any) => {
   /**
    * @description: 时间戳格式化
    * @param timeUnix
    * @return: string
    */
-  const now = new Date( timeUnix );
+  const now = new Date(timeUnix);
   let year = now.getFullYear();
   let month = now.getMonth() + 1;
   let date = now.getDate();
   let hour = now.getHours();
   let minute = now.getMinutes();
 
-  return year + '-' + month + '-' + date + '   ' + hour + ':' + minute;
+  return `${year}-${month}-${date}   ${hour}:${minute}`;
 };
 
-export const fs_overflow = ( str: any, num: any ) => {
+export const fs_overflow = (str: any, num: any) => {
   /**
    * @description:  文字超出个数点点点
    *
@@ -73,9 +73,9 @@ export const fs_overflow = ( str: any, num: any ) => {
    *
    * @return: string
    */
-  if ( str ) {
-    if ( str.length > num ) {
-      return str.slice( 0, num ) + '...';
+  if (str) {
+    if (str.length > num) {
+      return `${str.slice(0, num)}...`;
     } else {
       return str;
     }

@@ -4,25 +4,25 @@ class HomeStore {
   @observable text: any;
   @observable num: any;
 
-  constructor () {
+  constructor() {
     this.num = 0;
     this.text = 'Hello Word!';
   }
 
   @action
   plus = () => {
-    this.num = ++this.num;
+    this.num += 1;
   };
 
   minus = () => {
-    this.num = --this.num;
+    this.num -= 1;
   };
 
-  change = ( str: any ) => {
+  change = (str: any) => {
     this.text = str;
   };
   @computed
-  get plusNum () {
+  get plusNum() {
     return this.num + 5;
   }
 }

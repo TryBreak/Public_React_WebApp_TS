@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 14:39:07
+* @LastEditTime: 2019-05-17 14:02:04
  */
 import React, { Component } from 'react';
 import { Link /* ,Route */ } from 'react-router-dom';
@@ -11,7 +11,7 @@ import RouteView from '@/config/RouteView';
 import styles from './index.module.less';
 
 class Demo extends Component {
-  render () {
+  render() {
     const { match }: any = this.props;
     return (
       <div className="Demo">
