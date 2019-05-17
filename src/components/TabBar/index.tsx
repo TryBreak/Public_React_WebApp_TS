@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
- * @LastEditTime: 2019-05-15 16:41:20
+* @LastEditTime: 2019-05-17 13:41:47
  */
 
 import React from 'react';
@@ -17,8 +17,8 @@ import { isChildRoute } from '@/utils/inspectRouter';
 class TabBar extends React.Component {
   static propTypes = {};
   static defaultProps = {};
-  constructor ( props: any ) {
-    super( props );
+  constructor(props: any) {
+    super(props);
     this.state = {
       tabList: [
         {
@@ -60,80 +60,82 @@ class TabBar extends React.Component {
     };
   }
 
-  linkTo = ( Url: any ) => {
+  linkTo = (Url: any) => {
     const { history }: any = this.props;
     const { pathname }: any = history.location;
 
-    if ( pathname !== Url ) {
-      history.push( Url );
+    if (pathname !== Url) {
+      history.push(Url);
     }
   };
 
-  hrefTo = ( item: any ) => {
+  hrefTo = (item: any) => {
     const _this = this;
 
-    _this.linkTo( item.linkPath );
+    _this.linkTo(item.linkPath);
 
-    switch ( item.id ) {
-    case 1:
-      break;
+    switch (item.id) {
+      case 1:
+        break;
 
-    case 2:
-      break;
+      case 2:
+        break;
 
-    case 3:
-      break;
+      case 3:
+        break;
 
-    case 4:
-      break;
+      case 4:
+        break;
 
-    case 5:
-      break;
+      case 5:
+        break;
 
-    default:
-      break;
+      default:
+        break;
     }
   };
 
-  isActive = ( item: any ) => {
+  isActive = (item: any) => {
     const { history }: any = this.props;
     const { pathname } = history.location;
     // 路邮相等或者判定为二级以上子路由则判定为选中
     return (
-      isChildRoute( { father: item.linkPath, child: pathname } ) > 1 ||
+      isChildRoute({ father: item.linkPath, child: pathname }) > 1 ||
       item.linkPath === pathname
     );
   };
 
-  render () {
+  render() {
     const { tabList }: any = this.state;
 
     return (
       <div className={styles.wrapper}>
         <div className={styles.null} />
         <div className={styles.tabBar}>
-          {tabList.map( ( item: any ) => {
+          {tabList.map((item: any) => {
             return (
               <div
                 className={
-                  styles.item + ' ' + ( this.isActive( item ) && styles.active )
+                  `${styles.item} ${this.isActive(item) && styles.active}`
                 }
                 key={item.id}
-                onClick={() => this.hrefTo( item )}
+                onClick={() => {
+                  return this.hrefTo(item);
+                }}
               >
                 <img
                   className={styles.icon}
                   alt="icon"
-                  src={this.isActive( item ) ? item.icon_active : item.icon}
+                  src={this.isActive(item) ? item.icon_active : item.icon}
                 />
                 <span className={styles.name}>{item.name}</span>
               </div>
             );
-          } )}
+          })}
         </div>
       </div>
     );
   }
 }
 
-export default withRouter( TabBar as any );
+export default withRouter(TabBar as any);

@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: 中心化的路由渲染插件
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 14:21:11
+* @LastEditTime: 2019-05-17 13:42:31
  */
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
@@ -29,13 +29,13 @@ class RouteView extends Component {
   findRoutes = () => {
     //第一遍循环查找一层,第二遍循环查找二层,第三遍循环查找三层
     const { match } = this.props as any;
-    return inspectRouter( { pathname: match.path } );
+    return inspectRouter({ pathname: match.path });
   };
-  render () {
+  render() {
     const { match } = this.props as any;
     let routeList: any = this.findRoutes();
     const path = match.path;
-    return routeList.map( ( item: any, index: any ) => {
+    return routeList.map((item: any, index: any) => {
       return (
         <Route
           exact={!item.children}
@@ -44,7 +44,7 @@ class RouteView extends Component {
           component={item.component}
         />
       );
-    } );
+    });
   }
 }
 export default RouteView;

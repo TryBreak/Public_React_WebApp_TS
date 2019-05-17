@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-15 16:40:38
+* @LastEditTime: 2019-05-17 13:41:58
  */
 import React, { Component } from 'react';
 
@@ -30,36 +30,36 @@ import { $axios_set_default } from '@/utils/http';
 import TabBar from '@/components/TabBar';
 
 class App extends Component {
-  constructor ( props: any ) {
-    super( props );
+  constructor(props: any) {
+    super(props);
     $axios_set_default();
   }
-  componentDidMount () {
+  componentDidMount() {
     this.watchRouter();
   }
-  componentWillUpdate () {
+  componentWillUpdate() {
     this.watchRouter();
   }
-  titleAnd404 = ( pathname: any ) => {
-    storagePath( ( this.props as any ).history, pathname );
+  titleAnd404 = (pathname: any) => {
+    storagePath((this.props as any).history, pathname);
 
-    const nowRouter = fondRoute( pathname );
-    const nowPath = splitPath( pathname );
-    if ( nowRouter ) {
-    } else if ( nowPath[0] !== '/inbox' ) {
-      ( this.props as any ).history.replace( '/404' );
+    const nowRouter = fondRoute(pathname);
+    const nowPath = splitPath(pathname);
+    if (nowRouter) {
+    } else if (nowPath[0] !== '/inbox') {
+      (this.props as any).history.replace('/404');
     }
     const title = nowRouter && nowRouter.title;
-    if ( title ) {
+    if (title) {
       window.document.title = title || project_detail.name;
     }
   };
   //全局的路由变化监听
   watchRouter = () => {
-    const { pathname } = ( this.props as any ).history.location;
-    this.titleAnd404( pathname );
+    const { pathname } = (this.props as any).history.location;
+    this.titleAnd404(pathname);
   };
-  render () {
+  render() {
     return (
       <Switch>
         <Route exact path="/inbox" component={Inbox} />
@@ -70,7 +70,7 @@ class App extends Component {
 }
 
 class BaseRouter extends Component {
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Router>
