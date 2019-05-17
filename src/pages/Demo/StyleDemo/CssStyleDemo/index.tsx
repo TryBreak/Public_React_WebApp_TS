@@ -1,21 +1,21 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-14 14:18:16
- * @LastEditTime: 2019-05-15 14:33:08
+* @LastEditTime: 2019-05-17 13:37:24
  */
 import React, { Component } from 'react';
 import styles from './index.module.less';
 import image14 from '@/assets/image/14.jpg';
 
 class CssStyleDemo extends Component {
-  render () {
+  render() {
     return (
       <div>
         <h1>这里是 CssStyleDemo ,这里是三级路由</h1>
         img标签引用:
-        <img src={require( '@/assets/image/13.jpg' )} alt="" />
+        <img src={require('@/assets/image/13.jpg')} alt="" />
         <img src={image14} alt="image14" />
         css使用
         <div className={styles.cover} />

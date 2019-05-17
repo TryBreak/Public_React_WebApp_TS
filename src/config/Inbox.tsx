@@ -1,18 +1,18 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: inbox页面,可用的页面列表
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-15 14:29:46
+* @LastEditTime: 2019-05-17 13:36:48
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import routes from '@/pages/routes';
 
-const Navigation = ( { list }: any ) => {
+const Navigation = ({ list }: any) => {
   return (
     <ul>
-      {list.map( ( item: any ) => {
+      {list.map((item: any) => {
         return (
           <li key={item.path}>
             <h3>
@@ -27,13 +27,13 @@ const Navigation = ( { list }: any ) => {
             {item.children && <Navigation list={item.children.routes} />}
           </li>
         );
-      } )}
+      })}
     </ul>
   );
 };
 
 class Inbox extends Component {
-  render () {
+  render() {
     return (
       <div>
         <h1>该项目路由信息预览</h1>

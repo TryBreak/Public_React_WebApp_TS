@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-17 13:29:00
+ * @LastEditTime: 2019-05-17 13:39:24
  */
 
 module.exports = {
@@ -59,14 +59,6 @@ module.exports = {
     'no-ex-assign': "error",
     //禁止不必要的布尔类型转换
     'no-extra-boolean-cast': "error",
-    //圆括号使用规则
-    'no-extra-parens': ["error", "all", {
-      "ignoreJSX": "all",
-      "conditionalAssign": false,
-      "returnAssign": false,
-      "nestedBinaryExpressions": false,
-      "enforceForArrowConditionals": false
-    }],
     'no-extra-semi': "error",
     'no-func-assign': "error",
     'no-inner-declarations': "error",
