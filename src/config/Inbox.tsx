@@ -1,9 +1,9 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: inbox页面,可用的页面列表
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
-* @LastEditTime: 2019-05-17 13:42:23
+ * @LastEditTime: 2019-05-23 19:05:59
  */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
