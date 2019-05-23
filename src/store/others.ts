@@ -1,3 +1,11 @@
+/*
+ * @LastEditors: Mark
+ * @Description: none
+ * @Author: Mark
+ * @Date: 2019-05-15 16:31:20
+ * @LastEditTime: 2019-05-23 19:20:35
+ */
+
 import { observable, action } from 'mobx';
 
 class OthersStore {

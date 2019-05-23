@@ -9,6 +9,7 @@ node_modules
 # build output
 .next
 /dist/
+/build/
 
 # local env files
 .env.local
