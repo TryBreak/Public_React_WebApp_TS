@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-17 14:40:15
+ * @LastEditTime: 2019-05-23 18:57:13
  -->
 
 # one-react-ts-web 项目说明
@@ -36,7 +36,10 @@ npm run local-serve
 ### VSCode 插件
 
 - ESlint
-- TSLint
+
+美化辅助插件
+
+- Prettier
 
 ### settings.json 设置
 
@@ -44,7 +47,14 @@ npm run local-serve
 {
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "prettier.eslintIntegration": true,
   "eslint.autoFixOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "eslint.validate": [
     "html",
     "javascript",
