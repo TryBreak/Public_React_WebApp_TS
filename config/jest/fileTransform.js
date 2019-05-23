@@ -1,4 +1,10 @@
-'use strict';
+/*
+ * @LastEditors: Mark
+ * @Description: none
+ * @Author: Mark
+ * @Date: 2019-05-14 16:35:05
+ * @LastEditTime: 2019-05-23 19:11:41
+ */
 
 const path = require('path');
 const camelcase = require('camelcase');

@@ -1,4 +1,10 @@
-'use strict';
+/*
+ * @LastEditors: Mark
+ * @Description: none
+ * @Author: Mark
+ * @Date: 2019-05-14 16:35:05
+ * @LastEditTime: 2019-05-23 19:11:30
+ */
 
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
 const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
@@ -10,7 +16,7 @@ const fs = require('fs');
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
 
-module.exports = function(proxy, allowedHost) {
+module.exports = function (proxy, allowedHost) {
   return {
     // WebpackDevServer 2.4.3 introduced a security fix that prevents remote
     // websites from potentially accessing local content through DNS rebinding:

@@ -1,9 +1,9 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
-* @LastEditTime: 2019-05-17 13:41:47
+ * @LastEditTime: 2019-05-23 19:09:10
  */
 
 import React from 'react';
@@ -115,9 +115,8 @@ class TabBar extends React.Component {
           {tabList.map((item: any) => {
             return (
               <div
-                className={
-                  `${styles.item} ${this.isActive(item) && styles.active}`
-                }
+                className={`${styles.item} ${this.isActive(item) &&
+                  styles.active}`}
                 key={item.id}
                 onClick={() => {
                   return this.hrefTo(item);

@@ -1,9 +1,9 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: 常用的工具类函数
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
-* @LastEditTime: 2019-05-17 14:00:48
+ * @LastEditTime: 2019-05-23 19:14:30
  */
 
 import Qs from 'qs';
