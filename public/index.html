@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
- * @LastEditTime: 2019-05-15 13:26:50
+ * @LastEditTime: 2019-05-24 17:20:35
  -->
 <!DOCTYPE html>
 <html lang="zh">
@@ -41,6 +41,51 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <noscript> 您需要启用JavaScript来运行这个应用程序。 </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div id="load_public_icon">
+        <style type="text/css">
+          #load_public_icon {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -15px;
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 5px solid #bebebe;
+            border-left: 5px solid #498aca;
+            animation: load 1s linear infinite;
+            -moz-animation: load 1s linear infinite;
+            -webkit-animation: load 1s linear infinite;
+            -o-animation: load 1s linear infinite;
+          }
+          @-webkit-keyframes load {
+            from {
+              -webkit-transform: rotate(0deg);
+            }
+            to {
+              -webkit-transform: rotate(360deg);
+            }
+          }
+          @-moz-keyframes load {
+            from {
+              -moz-transform: rotate(0deg);
+            }
+            to {
+              -moz-transform: rotate(360deg);
+            }
+          }
+          @-o-keyframes load {
+            from {
+              -o-transform: rotate(0deg);
+            }
+            to {
+              -o-transform: rotate(360deg);
+            }
+          }
+        </style>
+      </div>
+    </div>
   </body>
 </html>
