@@ -3,14 +3,14 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
- * @LastEditTime: 2019-05-23 19:09:10
+ * @LastEditTime: 2019-05-25 15:14:48
  */
 
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { tab_icon } from './img/load';
-import styles from './index.module.less';
+import styles from './index.module.scss';
 
 import { isChildRoute } from '@/utils/inspectRouter';
 
