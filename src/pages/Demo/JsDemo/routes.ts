@@ -1,14 +1,14 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
-* @LastEditTime: 2019-05-23 13:23:35
+ * @LastEditTime: 2019-05-25 15:10:38
  */
 import _import from '@/utils/_import';
 
-const basePath = '/Demo/StyleDemo_js';
-const fatherPath = '/demo/style_demo_js';
+const basePath = '/Demo/JsDemo';
+const fatherPath = '/demo/js_demo';
 
 const routes = [
   {
@@ -16,7 +16,7 @@ const routes = [
     name: 'css样式演示',
     description: 'css样式演示',
     title: '三级路由-样式演示',
-    component: _import(`${basePath}/CssStyleDemo`),
+    component: _import(`${basePath}/LessStyleDemo`),
     from: fatherPath,
   },
   {

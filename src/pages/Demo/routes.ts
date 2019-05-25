@@ -1,9 +1,9 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
-* @LastEditTime: 2019-05-23 13:19:26
+ * @LastEditTime: 2019-05-25 15:08:50
  */
 import _import from '@/utils/_import';
 
@@ -22,14 +22,14 @@ const routes = [
     },
   },
   {
-    path: '/style_demo_js',
+    path: '/js_demo',
     name: '样式演示的js版本',
     description: '样式演示demo_js',
     title: '二级路由-样式演示-js',
-    component: _import(`${basePath}/StyleDemo_js`),
+    component: _import(`${basePath}/JsDemo`),
     from: fatherPath,
     children: {
-      routes: _import(`${basePath}/StyleDemo_js/routes`),
+      routes: _import(`${basePath}/JsDemo/routes`),
     },
   },
   {
