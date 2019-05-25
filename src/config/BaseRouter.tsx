@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-23 19:15:59
+ * @LastEditTime: 2019-05-25 15:26:10
  */
 import React, { Component } from 'react';
 
@@ -34,15 +34,19 @@ class App extends Component {
     super(props);
     $axios_set_default();
   }
+  //全局的路由变化监听
   componentDidMount() {
     this.watchRouter();
   }
-  componentWillUpdate() {
+  componentWillReceiveProps() {
     this.watchRouter();
   }
+  watchRouter = () => {
+    const { pathname } = (this.props as any).history.location;
+    this.titleAnd404(pathname);
+  };
   titleAnd404 = (pathname: any) => {
     storagePath((this.props as any).history, pathname);
-
     const nowRouter = fondRoute(pathname);
     const nowPath = splitPath(pathname);
     if (nowRouter) {
@@ -53,11 +57,6 @@ class App extends Component {
     if (title) {
       window.document.title = title || project_detail.name;
     }
-  };
-  //全局的路由变化监听
-  watchRouter = () => {
-    const { pathname } = (this.props as any).history.location;
-    this.titleAnd404(pathname);
   };
   render() {
     return (
