@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-25 11:37:00
+ * @LastEditTime: 2019-05-25 15:57:40
  -->
 
 # one-react-ts-web 项目说明
@@ -99,6 +99,7 @@ npm run local-serve
 
   - 配置 less , scss , css 的模块化设置
   - 支持 less 以及 scss
+  - 推荐使用 scss
 
 - eslint 配置
 

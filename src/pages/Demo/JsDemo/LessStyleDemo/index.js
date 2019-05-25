@@ -6,7 +6,7 @@
  * @LastEditTime: 2019-05-23 13:21:44
  */
 import React, { Component } from 'react';
-import styles from './index.module.less';
+import styles from './index.module.scss';
 import image14 from '@/assets/image/14.jpg';
 
 class CssStyleDemo extends Component {
