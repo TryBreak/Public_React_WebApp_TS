@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
- * @LastEditTime: 2019-05-25 15:14:48
+ * @LastEditTime: 2019-05-25 15:23:05
  */
 
 import React from 'react';
@@ -20,6 +20,7 @@ class TabBar extends React.Component {
   constructor(props: any) {
     super(props);
     this.state = {
+      route: '',
       tabList: [
         {
           icon: tab_icon.icon_1,
@@ -105,12 +106,27 @@ class TabBar extends React.Component {
     );
   };
 
+  //监听路由变化并setState
+  componentDidMount() {
+    this.setRoute();
+  }
+
+  componentWillReceiveProps() {
+    this.setRoute();
+  }
+  setRoute = () => {
+    this.setState({
+      route: (this.props as any).history.location.pathname,
+    });
+  };
+
   render() {
-    const { tabList }: any = this.state;
+    const { tabList, route }: any = this.state;
 
     return (
       <div className={styles.wrapper}>
         <div className={styles.null} />
+        <div className={styles.showRoute}>当前路由 {route}</div>
         <div className={styles.tabBar}>
           {tabList.map((item: any) => {
             return (

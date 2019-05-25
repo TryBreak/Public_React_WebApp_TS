@@ -3,11 +3,19 @@
 * @Description: In User Settings Edit
 * @Author: Mark
 * @Date: 2019-05-05 14:59:32
-* @LastEditTime: 2019-05-25 15:14:32
+* @LastEditTime: 2019-05-25 15:23:49
  */
 @import "@/assets/style/global.scss";
 .null {
   height: px(50);
+}
+.showRoute {
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  top: 0;
+  background-color: red;
+  color: #fff;
 }
 
 .tabBar {
