@@ -3,10 +3,10 @@
 * @Description: reset 的样式规范
 * @Author: Mark
 * @Date: 2019-05-05 11:53:31
-* @LastEditTime: 2019-05-14 20:01:01
+* @LastEditTime: 2019-05-25 15:05:21
  */
-
-@import "./resize.less";
+@charset 'utf-8';
+@import "./global.scss";
 
 html,
 body {
@@ -25,8 +25,8 @@ code {
 }
 
 html {
-  font-size: @htmlFontSize;
+  font-size: $htmlFontSize;
   body {
-    .fs(16);
+    font-size: px(16);
   }
 }

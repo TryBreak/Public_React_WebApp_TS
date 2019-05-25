@@ -3,13 +3,11 @@
 * @Description: less单位转换函数
 * @Author: Mark
 * @Date: 2019-05-05 11:53:31
-* @LastEditTime: 2019-05-25 14:51:07
+* @LastEditTime: 2019-05-25 15:05:59
  */
-
-@charset "utf-8";
-
+@charset 'utf-8';
 $htmlFontSize: 100px;
-//去掉单位
+
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
