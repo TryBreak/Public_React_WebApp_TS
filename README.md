@@ -3,7 +3,7 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-23 18:57:13
+ * @LastEditTime: 2019-05-25 11:37:00
  -->
 
 # one-react-ts-web 项目说明
@@ -97,7 +97,8 @@ npm run local-serve
 
 - css 预处理器配置
 
-  - 配置 less , scss , css 的模块化设置 , scss 需要自己安装 node-sass
+  - 配置 less , scss , css 的模块化设置
+  - 支持 less 以及 scss
 
 - eslint 配置
 

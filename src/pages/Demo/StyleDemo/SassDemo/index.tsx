@@ -1,18 +1,18 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-14 14:18:16
-* @LastEditTime: 2019-05-17 14:02:42
+ * @LastEditTime: 2019-05-25 11:36:11
  */
 import React, { Component } from 'react';
-import styles from './index.module.less';
+import styles from './index.module.scss';
 import image14 from '@/assets/image/14.jpg';
 
 class CssStyleDemo extends Component {
   render() {
     return (
-      <div>
+      <div className={styles.wrapper}>
         <h1>这里是 CssStyleDemo ,这里是三级路由</h1>
         img标签引用:
         <img src={require('@/assets/image/13.jpg')} alt="" />
