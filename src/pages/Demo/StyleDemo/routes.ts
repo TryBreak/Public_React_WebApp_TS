@@ -1,9 +1,9 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
-* @LastEditTime: 2019-05-17 14:02:34
+ * @LastEditTime: 2019-05-25 11:33:41
  */
 import _import from '@/utils/_import';
 
@@ -25,6 +25,14 @@ const routes = [
     description: 'js样式演示',
     title: '',
     component: _import(`${basePath}/JsStyleDemo`),
+    from: fatherPath,
+  },
+  {
+    path: '/sass_style_demo',
+    name: 'sass样式演示',
+    description: 'sass样式演示',
+    title: '',
+    component: _import(`${basePath}/SassDemo`),
     from: fatherPath,
   },
 ];
