@@ -3,16 +3,16 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-05-25 15:57:40
+ * @LastEditTime: 2019-06-17 14:49:00
  -->
 
 # one-react-ts-web 项目说明
 
 脚手架仓库地址 <https://github.com/facebook/create-react-app>
 
-官方文档 <https://facebook.github.io/create-react-app/>
+React-TypeScript 文档 <https://typescript.bootcss.com/tutorials/react.html>
 
-TypeScript 文档  <https://zhongsp.gitbooks.io/typescript-handbook/content/>
+TypeScript 文档 <https://www.tslang.cn/docs/handbook/basic-types.html>
 
 ## 运行方式
 
@@ -71,7 +71,7 @@ npm run local-serve
       "language": "vue",
       "autoFix": true
     }
-  ],
+  ]
 }
 ```
 
@@ -138,23 +138,23 @@ store.js
 使用方式:
 
 ```js
-import { localStore } from '@/utils/utils.js';
+import { localStore } from "@/utils/utils.js";
 
 // Store current user
-localStore.set('user', { name: 'Marcus' });
+localStore.set("user", { name: "Marcus" });
 
 // Get current user
-localStore.get('user');
+localStore.get("user");
 
 // Remove current user
-localStore.remove('user');
+localStore.remove("user");
 
 // Clear all keys
 localStore.clearAll();
 
 // Loop over all stored values
 localStore.each(function(value, key) {
-  console.log(key, '==', value);
+  console.log(key, "==", value);
 });
 ```
 
@@ -168,13 +168,13 @@ Lodash
 引用官方推荐命名
 
 ```js
-import _ from 'lodash';
-import _ from 'lodash/core';
-import fp from 'lodash/fp';
-import array from 'lodash/array';
-import object from 'lodash/fp/object';
-import at from 'lodash/at';
-import curryN from 'lodash/fp/curryN';
+import _ from "lodash";
+import _ from "lodash/core";
+import fp from "lodash/fp";
+import array from "lodash/array";
+import object from "lodash/fp/object";
+import at from "lodash/at";
+import curryN from "lodash/fp/curryN";
 ```
 
 注:不建议使用 `React-lodash`
@@ -191,7 +191,7 @@ normalize.css
 样式模块化和组件局部作用域
 
 ```js
-import styles from './index.module.less';
+import styles from "./index.module.less";
 <h2 className={styles.title}>Demo</h2>;
 ```
 
@@ -212,13 +212,13 @@ import styles from './index.module.less';
 js 中使用:
 
 ```js
-import { userLogin, getBannerList, getTestToken } from '@/api/Demo';
+import { userLogin, getBannerList, getTestToken } from "@/api/Demo";
 
-import routes from '@/pages/routes';
+import routes from "@/pages/routes";
 ```
 
 css 中使用需要添加 `~` 为前缀:
 
 ```css
-@import '~@/assets/style/resize.less';
+@import "~@/assets/style/resize.less";
 ```
