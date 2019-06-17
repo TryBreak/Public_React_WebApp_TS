@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div style={{ border: '10px solid red' }}>
-        <Hello name="Mark" />
+        <Hello name="Mark" enthusiasmLevel={20} />
       </div>
     );
   }
