@@ -3,7 +3,7 @@
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
-* @LastEditTime: 2019-05-17 13:35:42
+* @LastEditTime: 2019-06-17 20:30:33
  */
 import routes from '@/pages/routes';
 import { localStore } from '@/utils/utils';
@@ -18,7 +18,7 @@ export const splitPath = (path: any) => {
    * @param path
    * @return: []
    */
-  const pathArr = [];
+  const pathArr: Array<string> = [];
   const path_split = path.split('/');
   if (path === '/') {
     pathArr.push('/');
@@ -137,7 +137,7 @@ export const fondRoute = (pathname: any) => {
 export const isChildRoute = ({ father, child }: any) => {
   const fatherArr = splitPath(father);
   const childArr = splitPath(child);
-  const returnArr = [];
+  const returnArr: Array<boolean> = [];
   for (let i = 0; i < childArr.length; i++) {
     const child = childArr[i];
     const father = fatherArr[i];
