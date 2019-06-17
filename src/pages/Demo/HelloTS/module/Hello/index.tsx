@@ -3,11 +3,11 @@
  * @Description: TS 组建的两种方式
  * @Author: Mark
  * @Date: 2019-06-17 14:08:30
- * @LastEditTime: 2019-06-17 14:38:28
+ * @LastEditTime: 2019-06-17 14:42:20
  */
 
 import * as React from 'react';
-
+import styles from './index.module.scss';
 //定义接口
 export interface Props {
   name: string;
@@ -41,8 +41,8 @@ class Hello extends React.Component<Props, object> {
     }
 
     return (
-      <div className="hello">
-        <div className="greeting">
+      <div className={styles.hello}>
+        <div className={styles.greeting}>
           Hello {name + getExclamationMarks(enthusiasmLevel)}
         </div>
       </div>
