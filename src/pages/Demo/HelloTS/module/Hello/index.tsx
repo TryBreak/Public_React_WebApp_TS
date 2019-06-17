@@ -1,32 +1,38 @@
-// import * as React from 'react';
+/*
+ * @LastEditors: Mark
+ * @Description: TS 组建的两种方式
+ * @Author: Mark
+ * @Date: 2019-06-17 14:08:30
+ * @LastEditTime: 2019-06-17 14:18:43
+ */
 
-// export interface HelloProps {
-//   compiler: string;
-//   framework: string;
-// }
-
-// export const Hello = (props: HelloProps) => {
-//   return (
-//     <h1>
-//     Hello from {props.compiler} and {props.framework}!
-//     </h1>
-//   );
-// };
+// 无状态功能组件
 
 import * as React from 'react';
 
-export interface HelloProps {
-  compiler: string;
-  framework: string;
+export interface Props {
+  name: string;
+  enthusiasmLevel?: number;
 }
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export default class Hello extends React.Component<HelloProps, {}> {
-  render() {
-    return (
-      <h1>
-        Hello from {this.props.compiler} and {this.props.framework}!
-      </h1>
-    );
+
+function Hello({ name, enthusiasmLevel = 1 }: Props) {
+  if (enthusiasmLevel <= 0) {
+    throw new Error('You could be a little more enthusiastic. :D');
   }
+
+  return (
+    <div className="hello">
+      <div className="greeting">
+        Hello {name + getExclamationMarks(enthusiasmLevel)}
+      </div>
+    </div>
+  );
+}
+
+export default Hello;
+
+// 类组件
+
+function getExclamationMarks(numChars: number) {
+  return Array(numChars + 1).join('!');
 }

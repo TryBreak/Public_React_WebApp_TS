@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div style={{ border: '10px solid red' }}>
-        <Hello framework="React" compiler="hello" />
+        <Hello name="Mark" />
       </div>
     );
   }
