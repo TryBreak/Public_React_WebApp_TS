@@ -3,13 +3,21 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-25 15:08:50
+ * @LastEditTime: 2019-06-17 14:09:55
  */
 import _import from '@/utils/_import';
 
 const basePath = '/Demo';
 const fatherPath = '/demo';
 const routes = [
+  {
+    path: '/hello_ts',
+    name: 'hello',
+    description: 'ts组件演示',
+    title: 'ts组件演示',
+    component: _import(`${basePath}/HelloTS`),
+    from: fatherPath,
+  },
   {
     path: '/style_demo',
     name: '样式演示',
