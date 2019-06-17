@@ -3,10 +3,10 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-25 15:17:49
+ * @LastEditTime: 2019-06-17 13:44:35
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { printVersion } from './baseUrl';
 import 'react-app-polyfill/ie9';
