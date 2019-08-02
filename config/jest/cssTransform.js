@@ -1,10 +1,4 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 16:35:05
- */
+'use strict';
 
 // This is a custom Jest transformer turning style imports into empty objects.
 // http://facebook.github.io/jest/docs/en/webpack.html

@@ -1,9 +1,9 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: 版本号管理和baseUrl管理
  * @Author: Mark
  * @Date: 2019-05-13 15:18:24
- * @LastEditTime: 2019-05-25 15:06:37
+* @LastEditTime: 2019-08-02 11:25:55
  */
 
 //baseUrl
@@ -14,16 +14,18 @@ let url = 'http://ip-29-shanhusecurity-app.coralcodes.com'; //测试服
 export const baseUrl = url;
 
 // 版本信息管理
-const versionList = [
+export const versionList: versionList = [
   {
     code: '0.2.0',
     describe: '添加scss支持',
-    user: 'Mark',
+    author: 'Mark',
+    time: '2019-06-18 00:03:43',
   },
   {
     code: '0.1.0',
     describe: 'Public_React_WebApp_TS',
-    user: 'Mark',
+    author: 'Mark',
+    time: '2019年6月18日 00点03分',
   },
 ];
 
@@ -38,7 +40,7 @@ export const printVersion = () => {
     'font-size:10;color:green;font-weight:bold;'
   );
   console.info(
-    `%c user -- ${version.user}`,
+    `%c user -- ${version.author}`,
     'font-size:10;color:green;font-weight:bold;'
   );
   console.groupEnd();

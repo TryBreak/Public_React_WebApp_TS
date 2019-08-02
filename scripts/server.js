@@ -4,7 +4,7 @@ const app = new Koa();
 const path = require('path');
 const fs = require('fs');
 
-const staticPath = '../build';
+const staticPath = '../dist';
 
 app.use(static(path.join(__dirname, staticPath)));
 

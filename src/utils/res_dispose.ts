@@ -1,11 +1,11 @@
-export const res_dispose = (data: any) => {
+// import { Toast } from 'antd-mobile';
+export const res_dispose = (response: any) => {
+  const data = response.data;
   switch (data.code) {
-    case 'error':
-      console.error(data.message);
+    case 'OK':
       break;
-
     default:
-      console.info(data.message);
+      // Toast.fail(data.message, 1);
       break;
   }
   return data;

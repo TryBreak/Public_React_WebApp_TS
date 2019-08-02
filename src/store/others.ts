@@ -1,13 +1,13 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-15 16:31:20
- * @LastEditTime: 2019-05-23 19:20:35
+* @LastEditTime: 2019-08-02 11:09:40
  */
 
 import { observable, action } from 'mobx';
-
+import { getRecommendList } from '@/api/demo';
 class OthersStore {
   @observable str: any;
 
@@ -15,13 +15,15 @@ class OthersStore {
     this.str = '这个值来自其他模块';
   }
   @action
+
   getData = () => {
-    fetch('api/comments/show?id=4199740256395164&page=1').then((res) => {
-      res.json().then(
-        action((data: any) => {
-          this.str = data.msg;
-        })
-      );
+    const _this = this;
+    getRecommendList({
+      seen_ids: '123',
+      count: 5,
+      only_unfollowed: true,
+    }).then((res:any) => {
+      _this.str = JSON.stringify(res);
     });
   };
 }
