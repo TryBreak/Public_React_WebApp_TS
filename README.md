@@ -156,7 +156,7 @@ localStore.clearAll();
 
 // Loop over all stored values
 localStore.each(function(value, key) {
-  console.log(key, "==", value);
+  console.info(key, "==", value);
 });
 ```
 

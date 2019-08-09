@@ -1,7 +1,5 @@
-/build/
 /dist/
 /config/
 /node_modules/
-/scripts/
 *.html
 serviceWorker.*
