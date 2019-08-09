@@ -32,7 +32,7 @@ class BaseRouter extends React.Component<pageProps> {
     $axios_set_default();
     this.watchRouter();
   }
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.watchRouter();
   }
   watchRouter = () => {

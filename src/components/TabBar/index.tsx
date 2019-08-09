@@ -118,7 +118,7 @@ class TabBar extends React.Component<pageProps> {
     this.setRoute();
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setRoute();
   }
   setRoute = () => {
