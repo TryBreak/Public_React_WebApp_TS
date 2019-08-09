@@ -1,3 +1,5 @@
+'use strict';
+
 const static_serve = require('koa-static');
 const Koa = require('koa');
 const app = new Koa();

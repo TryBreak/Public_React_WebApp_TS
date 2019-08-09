@@ -1,3 +1,4 @@
+'use strict';
 /* eslint-disable no-nested-ternary */
 /* eslint-disable array-element-newline */
 /* eslint-disable no-undefined */
