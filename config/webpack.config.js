@@ -1,3 +1,6 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable array-element-newline */
+/* eslint-disable no-undefined */
 const fs = require('fs');
 const isWsl = require('is-wsl');
 const path = require('path');
