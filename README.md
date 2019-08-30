@@ -1,14 +1,6 @@
-<!--
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-08-02 11:33:06
- -->
-
 # one-react-ts-web 项目说明
 
-脚手架仓库地址 <https://github.com/facebook/create-react-app>
+基层脚手架仓库地址 <https://github.com/facebook/create-react-app>
 
 React-TypeScript 文档 <https://typescript.bootcss.com/tutorials/react.html>
 
@@ -18,7 +10,7 @@ TypeScript 文档 <https://www.tslang.cn/docs/handbook/basic-types.html>
 
 ```bash
 #更新和安装依赖
-npm install
+npm ci
 
 #本地查看与开发
 npm run start
