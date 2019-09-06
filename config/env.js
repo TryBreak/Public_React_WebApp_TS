@@ -1,11 +1,4 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 16:35:05
- */
-
+'use strict';
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
@@ -63,6 +56,7 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
   })
   .map((folder) => {
     return path.resolve(appDirectory, folder);
+
   })
   .join(path.delimiter);
 
@@ -74,6 +68,7 @@ function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
     .filter((key) => {
       return REACT_APP.test(key);
+
     })
     .reduce(
       (env, key) => {

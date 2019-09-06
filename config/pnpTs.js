@@ -1,11 +1,5 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-23 19:11:47
- */
-
+'use strict';
+/* eslint-disable max-params */
 const { resolveModuleName } = require('ts-pnp');
 
 exports.resolveModuleName = (

@@ -1,40 +1,51 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: none
  * @Author: Mark
- * @Date: 2019-05-05 11:53:31
- * @LastEditTime: 2019-05-25 14:59:14
+ * @Date: 2019-07-03 02:20:03
+* @LastEditTime: 2019-08-02 11:36:37
  */
-import React, { Component } from 'react';
-import { Link /* ,Route */ } from 'react-router-dom';
-import RouteView from '@/config/RouteView';
-import styles from './index.module.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RouterView, findRoute } from '@/utils/RouterView';
+import TabBar from '@/components/TabBar';
 
-class Demo extends Component {
+export default class extends React.Component<pageProps> {
+  linkList = () => {
+    const { match } = this.props;
+    const route = findRoute(match.path);
+    const routes = route && route.routes;
+    const linkList = [];
+    for (const key in routes) {
+      if (routes.hasOwnProperty(key)) {
+        const el = routes[key];
+        linkList.push(
+          <Link to={key} key={key} style={{ display: 'block', margin: '10px' }}>
+            {el.name}
+          </Link>
+        );
+      }
+    }
+    return linkList;
+  };
   render() {
-    const { match }: any = this.props;
+    const { match } = this.props;
+
     return (
-      <div className="Demo">
-        <h2 className={styles.title}>Demo</h2>
-        <ul>
-          <li>
-            <Link to="/demo/style_demo">style_demo</Link>
-          </li>
-          <li>
-            <Link to="/demo/request_demo">request_demo</Link>
-          </li>
-          <li>
-            <Link to="/demo/mobox_demo">mobox_demo</Link>
-          </li>
-        </ul>
-        <RouteView match={match} />
-        {/* <Route
-          exact
-          path={match.path}
-          render={() => <h3>这里是demo首页哦</h3>}
-        /> */}
+      <div>
+        <h1>这里是 demo 页面 </h1>
+        <button
+          onClick={() => {
+            return this.props.history.push('/');
+          }}
+        >
+          跳转回 首页
+        </button>
+        {this.linkList()}
+        <hr />
+        <RouterView path={match.path} />
+        <TabBar {...this.props}/>
       </div>
     );
   }
 }
-export default Demo;

@@ -3,18 +3,18 @@
  * @Description: none
  * @Author: Mark
  * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-05-17 13:39:24
+ * @LastEditTime: 2019-08-01 17:27:51
  */
 
 module.exports = {
-  extends: ['react-app'],
+  extends: ["react-app"],
   globals: {
     // 这里填入你的项目需要的全局变量
     // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
     // jQuery: false,
     // $: false
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
   },
   rules: {
     "react/jsx-filename-extension": [
@@ -22,12 +22,12 @@ module.exports = {
       { extensions: [".js", ".jsx", ".tsx"] }
     ],
     //强制return
-    'getter-return': 'error',
-    'no-await-in-loop': 'error',
+    "getter-return": "error",
+    "no-await-in-loop": "error",
     //条件表达式禁止出现赋值操作
-    'no-cond-assign': "error",
+    "no-cond-assign": "error",
     //必须使用\n换行
-    "linebreak-style": ['error', "unix"],
+    "linebreak-style": ["error", "unix"],
     //使用单引号
     quotes: ["error", "single"],
     //console
@@ -48,54 +48,60 @@ module.exports = {
     //禁用常量表达式
     "no-constant-condition": "error",
     //正则的控制字符
-    'no-control-regex': "error",
+    "no-control-regex": "error",
     "no-debugger": "error",
-    'no-dupe-args': "error",
+    "no-dupe-args": "error",
     //禁止出现重复的键
     "no-dupe-keys": "error",
     //禁止出现重复的 case 标签
-    'no-duplicate-case': "error",
+    "no-duplicate-case": "error",
     //禁止对 catch 子句的参数重新赋值
-    'no-ex-assign': "error",
+    "no-ex-assign": "error",
     //禁止不必要的布尔类型转换
-    'no-extra-boolean-cast': "error",
-    'no-extra-semi': "error",
-    'no-func-assign': "error",
-    'no-inner-declarations': "error",
+    "no-extra-boolean-cast": "error",
+    "no-extra-semi": "error",
+    "no-func-assign": "error",
+    "no-inner-declarations": "error",
     //必须使用括号包裹箭头函数的参数
     "arrow-parens": ["error", "always"],
     //禁止不规则的空白
-    'no-irregular-whitespace': ["error", {
-      "skipStrings": true,
-      "skipComments": true,
-      "skipTemplates": true,
-      "skipRegExps": true,
-    }],
-    'no-obj-calls': "error",
+    "no-irregular-whitespace": [
+      "error",
+      {
+        skipStrings: true,
+        skipComments: true,
+        skipTemplates: true,
+        skipRegExps: true
+      }
+    ],
+    "no-obj-calls": "error",
     //禁止直接调用 Object.prototypes 的内置属性
-    'no-prototype-builtins': "error",
+    // 'no-prototype-builtins': 'error',
     //正则表达式多个空格
-    'no-regex-spaces': "error",
+    "no-regex-spaces": "error",
     //禁用稀疏数组
-    'no-sparse-arrays': "error",
+    "no-sparse-arrays": "error",
     //禁止出现令人困惑的多行表达式
-    'no-unexpected-multiline': "error",
+    "no-unexpected-multiline": "error",
     //警告return后的语句
-    'no-unreachable': 'warn',
+    "no-unreachable": "warn",
     //控制流语句规范
-    'no-unsafe-finally': "error",
+    "no-unsafe-finally": "error",
     //善用感叹号
-    'no-unsafe-negation': "error",
+    "no-unsafe-negation": "error",
     //强制 generator 函数
     "generator-star-spacing": ["error", { before: false, after: true }],
     //函数空格的问题
-    "space-before-function-paren": ["error", {
-      "anonymous": "always",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
-    'use-isnan': "error",
-    'valid-typeof': ["error", { "requireStringLiterals": true }],
+    "space-before-function-paren": [
+      "error",
+      {
+        anonymous: "always",
+        named: "never",
+        asyncArrow: "always"
+      }
+    ],
+    "use-isnan": "error",
+    "valid-typeof": ["error", { requireStringLiterals: true }],
     //分号
     semi: ["error", "always"],
     "semi-spacing": ["error", { before: false, after: true }],
@@ -111,7 +117,7 @@ module.exports = {
     //禁止混合缩进
     "no-mixed-spaces-and-tabs": "error",
     //空格缩进
-    indent: ["error", 2, { "SwitchCase": 1 }],
+    indent: ["error", 2, { SwitchCase: 1 }],
     //调用构造函数必须带括号
     "new-parens": "error",
     //多行注释风格
@@ -238,39 +244,42 @@ module.exports = {
     "no-unused-vars": "warn",
     "no-use-before-define": "error",
     //数组括号
-    'array-bracket-newline': ['error', 'consistent'],
-    'array-bracket-spacing': ["error", "never"],
-    'array-element-newline': ["error", { "multiline": true, 'minItems': 3 }],
+    "array-bracket-newline": ["error", "consistent"],
+    "array-bracket-spacing": ["error", "never"],
+    "array-element-newline": ["error", { multiline: true, minItems: 3 }],
     //花括号
-    'block-spacing': "error",
-    'comma-spacing': ["error", { "before": false, "after": true }],
-    'comma-style': "error",
-    'computed-property-spacing': 'error',
-    'eol-last': 'error',
-    'implicit-arrow-linebreak': ["error", "beside"],
-    'key-spacing': "error",
+    "block-spacing": "error",
+    "comma-spacing": ["error", { before: false, after: true }],
+    "comma-style": "error",
+    "computed-property-spacing": "error",
+    "eol-last": "error",
+    "implicit-arrow-linebreak": ["error", "beside"],
+    "key-spacing": "error",
     //最大三层嵌套
-    'max-nested-callbacks': ["error", 3],
+    "max-nested-callbacks": ["error", 3],
     //最大参数数量 , 多余的参数应该使用解构
-    'max-params': ["error", 3],
-    'no-array-constructor': "error",
-    'no-mixed-operators': "error",
-    'no-multi-assign': "error",
-    'no-negated-condition': "error",
-    'no-new-object': "error",
-    'no-plusplus': ["error", { "allowForLoopAfterthoughts": true }],
-    'object-curly-newline': ["error", {
-      "ObjectPattern": { "multiline": true },
-    }],
-    'arrow-body-style': ['error', 'always'],
-    'no-dupe-class-members': "error",
-    'no-const-assign': "error",
-    'no-class-assign': "error",
-    'no-useless-rename': "error",
-    'prefer-rest-params': "error",
-    'prefer-spread': "error",
-    'prefer-template': "error",
-    'sort-imports': 'off',
-  },
+    "max-params": ["error", 3],
+    "no-array-constructor": "error",
+    "no-mixed-operators": "error",
+    "no-multi-assign": "error",
+    "no-negated-condition": "error",
+    "no-new-object": "error",
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+    "object-curly-newline": [
+      "error",
+      {
+        ObjectPattern: { multiline: true }
+      }
+    ],
+    "arrow-body-style": ["error", "always"],
+    "no-dupe-class-members": "error",
+    "no-const-assign": "error",
+    "no-class-assign": "error",
+    "no-useless-rename": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "sort-imports": "off"
+  }
 };
 // 详细规则说明请查看 http://eslint.cn/docs/rules/

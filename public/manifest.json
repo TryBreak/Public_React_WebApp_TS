@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Public_React_WebApp_TS",
+  "name": "Create React App Sample From TypeScript",
   "icons": [
     {
       "src": "favicon.ico",

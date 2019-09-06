@@ -1,14 +1,6 @@
-<!--
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 14:47:31
- * @LastEditTime: 2019-06-17 14:49:00
- -->
-
 # one-react-ts-web 项目说明
 
-脚手架仓库地址 <https://github.com/facebook/create-react-app>
+基层脚手架仓库地址 <https://github.com/facebook/create-react-app>
 
 React-TypeScript 文档 <https://typescript.bootcss.com/tutorials/react.html>
 
@@ -18,7 +10,7 @@ TypeScript 文档 <https://www.tslang.cn/docs/handbook/basic-types.html>
 
 ```bash
 #更新和安装依赖
-npm install
+npm ci
 
 #本地查看与开发
 npm run start
@@ -112,6 +104,10 @@ Mobx
 文档地址
 <https://cn.mobx.js.org/>
 
+定义方法参见 `/store` 目录
+
+使用方法参见 `/pages/mobx` 目录
+
 ## 演示 demo
 
 基础页面建设
@@ -125,8 +121,6 @@ Mobx
 样式演示模块
 
 请求模块
-
-Mobx 状态管理 Demo
 
 ## 客户端本地存储
 
@@ -154,7 +148,7 @@ localStore.clearAll();
 
 // Loop over all stored values
 localStore.each(function(value, key) {
-  console.log(key, "==", value);
+  console.info(key, "==", value);
 });
 ```
 
@@ -221,4 +215,57 @@ css 中使用需要添加 `~` 为前缀:
 
 ```css
 @import "~@/assets/style/resize.less";
+```
+
+## tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "noImplicitAny": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["src"],
+  "strictNullChecks": true,
+  "removeComments": true,
+  "module": "esnext"
+}
+```
+
+> 如果遇到第三方库的 @types 声明文件有问题或者干脆没有的 请把 `noImplicitAny` 改为 `false`
+
+## 路由配置"
+
+参见 `/src/pages/routes.ts` 文件
+
+## sitemap 页面
+
+routerView 默认自动生成路由为 `/sitemap` 的页面 , 用于展示项目相关的信息
+
+## docker 发布
+
+修改 `/deploy` 目录下的 `deploy.sh` 文件的内容 ， 然后运行
+
+```bash
+
+npm run deploy
+
 ```

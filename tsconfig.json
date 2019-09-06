@@ -21,5 +21,8 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "strictNullChecks": true,
+  "removeComments": true,
+  "module": "esnext"
 }

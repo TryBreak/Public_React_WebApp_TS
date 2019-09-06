@@ -1,4 +1,3 @@
-
 .temp/
 .rn_temp/
 
@@ -10,6 +9,7 @@ node_modules
 .next
 /dist/
 /build/
+/deploy/dist/
 
 # local env files
 .env.local

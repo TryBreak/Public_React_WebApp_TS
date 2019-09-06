@@ -1,15 +1,7 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-23 19:11:14
- */
-
+'use strict';
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
-
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
@@ -32,6 +24,7 @@ function ensureSlash(inputPath, needsSlash) {
 
 const getPublicUrl = (appPackageJson) => {
   return envPublicUrl || require(appPackageJson).homepage;
+
 };
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
@@ -65,7 +58,9 @@ const moduleFileExtensions = [
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find((extension) => {
     return fs.existsSync(resolveFn(`${filePath}.${extension}`));
-  });
+
+  }
+  );
 
   if (extension) {
     return resolveFn(`${filePath}.${extension}`);
@@ -74,11 +69,12 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp('dist'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveModule(resolveApp, 'src/config/main'),
@@ -93,5 +89,7 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };
+
+
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

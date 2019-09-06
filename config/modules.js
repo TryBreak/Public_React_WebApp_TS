@@ -1,11 +1,4 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 16:35:05
- * @LastEditTime: 2019-05-14 16:35:05
- */
-
+'use strict';
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
@@ -21,7 +14,7 @@ function getAdditionalModulePaths(options = {}) {
 
   // We need to explicitly check for null and undefined (and not a falsy value) because
   // TypeScript treats an empty string as `.`.
-  if (baseUrl == null) {
+  if (baseUrl === null) {
     // If there's no baseUrl set we respect NODE_PATH
     // Note that NODE_PATH is deprecated and will be removed
     // in the next major release of create-react-app.

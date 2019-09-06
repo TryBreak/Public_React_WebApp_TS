@@ -1,76 +1,83 @@
 /*
- * @LastEditors: Mark
+* @LastEditors: Mark
  * @Description: In User Settings Edit
  * @Author: Mark
  * @Date: 2019-05-05 10:25:14
- * @LastEditTime: 2019-05-25 15:23:05
+* @LastEditTime: 2019-08-02 13:18:50
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
 import { tab_icon } from './img/load';
 import styles from './index.module.scss';
 
-import { isChildRoute } from '@/utils/inspectRouter';
+import { isChildRoute } from '@/utils/RouterView/inspectRouter';
 
-class TabBar extends React.Component {
+
+interface tabList{
+  icon?: any,
+  icon_active?: any,
+  name: string,
+  id: number,
+  linkPath: string
+}
+
+class TabBar extends React.Component<pageProps> {
   static propTypes = {};
   static defaultProps = {};
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      route: '',
-      tabList: [
-        {
-          icon: tab_icon.icon_1,
-          icon_active: tab_icon.icon_1_active,
-          name: 'home',
-          id: 1,
-          linkPath: '/',
-        },
-        {
-          icon: tab_icon.icon_2,
-          icon_active: tab_icon.icon_2_active,
-          name: 'inbox',
-          id: 2,
-          linkPath: '/inbox',
-        },
-        {
-          icon: tab_icon.icon_3,
-          icon_active: tab_icon.icon_3_active,
-          name: 'MobxDemo',
-          id: 3,
-          linkPath: '/demo/mobox_demo',
-        },
-        {
-          icon: tab_icon.icon_4,
-          icon_active: tab_icon.icon_4_active,
-          name: 'RequestDemo',
-          id: 4,
-          linkPath: '/demo/request_demo',
-        },
-        {
-          icon: tab_icon.icon_5,
-          icon_active: tab_icon.icon_5_active,
-          name: 'StyleDemo',
-          id: 5,
-          linkPath: '/demo/style_demo',
-        },
-      ],
-    };
+  state: {
+    route: string;
+    readonly tabList: tabList[];
+  } = {
+    route: '',
+    tabList: [
+      {
+        icon: tab_icon.icon_1,
+        icon_active: tab_icon.icon_1_active,
+        name: 'demo',
+        id: 1,
+        linkPath: '/demo',
+      },
+      {
+        icon: tab_icon.icon_2,
+        icon_active: tab_icon.icon_2_active,
+        name: 'sitemap',
+        id: 2,
+        linkPath: '/sitemap',
+      },
+      {
+        icon: tab_icon.icon_3,
+        icon_active: tab_icon.icon_3_active,
+        name: 'mobx',
+        id: 3,
+        linkPath: '/demo/mobx',
+      },
+      {
+        icon: tab_icon.icon_4,
+        icon_active: tab_icon.icon_4_active,
+        name: 'request',
+        id: 4,
+        linkPath: '/demo/request',
+      },
+      {
+        icon: tab_icon.icon_5,
+        icon_active: tab_icon.icon_5_active,
+        name: 'style',
+        id: 5,
+        linkPath: '/demo/style_demo',
+      },
+    ],
   }
 
-  linkTo = (Url: any) => {
-    const { history }: any = this.props;
-    const { pathname }: any = history.location;
+  linkTo = (Url: string) => {
+    const { history } = this.props;
+    const { pathname } = history.location;
 
     if (pathname !== Url) {
       history.push(Url);
     }
   };
 
-  hrefTo = (item: any) => {
+  hrefTo = (item: tabList) => {
     const _this = this;
 
     _this.linkTo(item.linkPath);
@@ -96,12 +103,12 @@ class TabBar extends React.Component {
     }
   };
 
-  isActive = (item: any) => {
-    const { history }: any = this.props;
+  isActive = (item:tabList) => {
+    const { history } = this.props;
     const { pathname } = history.location;
     // 路邮相等或者判定为二级以上子路由则判定为选中
     return (
-      isChildRoute({ father: item.linkPath, child: pathname }) > 1 ||
+      isChildRoute({father: item.linkPath, child: pathname})||
       item.linkPath === pathname
     );
   };
@@ -111,24 +118,23 @@ class TabBar extends React.Component {
     this.setRoute();
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setRoute();
   }
   setRoute = () => {
     this.setState({
-      route: (this.props as any).history.location.pathname,
+      route: this.props.history.location.pathname,
     });
   };
 
   render() {
-    const { tabList, route }: any = this.state;
-
+    const { tabList, route } = this.state;
     return (
       <div className={styles.wrapper}>
         <div className={styles.null} />
         <div className={styles.showRoute}>当前路由 {route}</div>
         <div className={styles.tabBar}>
-          {tabList.map((item: any) => {
+          {tabList.map((item: tabList) => {
             return (
               <div
                 className={`${styles.item} ${this.isActive(item) &&
@@ -153,4 +159,4 @@ class TabBar extends React.Component {
   }
 }
 
-export default withRouter(TabBar as any);
+export default TabBar;
