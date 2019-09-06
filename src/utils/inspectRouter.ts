@@ -1,15 +1,15 @@
 /*
-* @LastEditors: Mark
+ * @LastEditors: Mark
  * @Description: 路由的相关处理查询函数
  * @Author: Mark
  * @Date: 2019-04-08 11:33:38
-* @LastEditTime: 2019-06-17 20:30:33
+ * @LastEditTime: 2019-07-02 22:22:10
  */
-import routes from '@/pages/routes';
-import { localStore } from '@/utils/utils';
+import routes from "@/pages/routes";
+import { localStore } from "@/utils/utils";
 
 export const getMainRoute = (path: any) => {
-  return `/${path.split('/')[1]}`;
+  return `/${path.split("/")[1]}`;
 };
 
 export const splitPath = (path: any) => {
@@ -19,9 +19,9 @@ export const splitPath = (path: any) => {
    * @return: []
    */
   const pathArr: Array<string> = [];
-  const path_split = path.split('/');
-  if (path === '/') {
-    pathArr.push('/');
+  const path_split = path.split("/");
+  if (path === "/") {
+    pathArr.push("/");
     return pathArr;
   }
   for (let i = 0; i < path_split.length; i++) {
@@ -42,10 +42,10 @@ export const inspect404 = ({ pathname }: any) => {
    * }
    * @return: {}
    */
-  const find = routes.find((item) => {
+  const find = routes.find(item => {
     return nowPath === item.path;
   });
-  if (nowPath === '/inbox') {
+  if (nowPath === "/inbox") {
     return true;
   }
   return find;
@@ -81,7 +81,7 @@ export const recursion = (pathArr: any) => {
 };
 
 export const inspectRouter = ({ pathname }: any) => {
-  const pathArr = pathname.split('/');
+  const pathArr = pathname.split("/");
   const routeList = recursion(pathArr);
 
   return routeList;
@@ -90,7 +90,7 @@ export const inspectRouter = ({ pathname }: any) => {
 //匹配和查找路由,返回路由的配置信息
 export const fondRoute = (pathname: any) => {
   const pathArr = splitPath(pathname);
-  let nowRoutes: any = '';
+  let nowRoutes: any = "";
   const degree = pathArr.length;
   let count = 0;
 
@@ -157,11 +157,11 @@ export const storagePath = (history: any, pathname: any, ...option: any) => {
   // if (history.action === 'POP') {
   //   localStore.remove('pathArr');
   // }
-  const pathArr = localStore.get('routerHistory') || [];
+  const pathArr = localStore.get("routerHistory") || [];
   pathArr.push(pathname);
   let storageArr = pathArr;
   if (pathArr.length >= num) {
     storageArr = pathArr.slice(pathArr.length - num, pathArr.length);
   }
-  localStore.set('routerHistory', storageArr);
+  localStore.set("routerHistory", storageArr);
 };
