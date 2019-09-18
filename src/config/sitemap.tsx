@@ -1,17 +1,10 @@
-/*
-* @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-07-03 02:20:03
-* @LastEditTime: 2019-08-02 11:27:59
- */
-import React from 'react';
-import routes from '@/pages/routes';
-import { Link } from 'react-router-dom';
+import React from "react";
+import routes from "@/pages/routes";
+import { Link } from "react-router-dom";
 
-import {versionList} from './baseUrl';
+import { versionList } from "./baseUrl";
 
-interface moduleProps{
+interface moduleProps {
   list: routes;
 }
 
@@ -31,14 +24,15 @@ const Navigation = (props: moduleProps) => {
               {key}
             </h4>
             <p>{list[key].describe}</p>
-            {list[key].routes && <Navigation list={list[key].routes as routes} />}
+            {list[key].routes && (
+              <Navigation list={list[key].routes as routes} />
+            )}
           </li>
         );
       })}
     </ul>
   );
 };
-
 
 export default class extends React.Component {
   render() {

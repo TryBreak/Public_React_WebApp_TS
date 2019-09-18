@@ -1,5 +1,5 @@
 'use strict';
-/* eslint-disable max-params */
+
 const { resolveModuleName } = require('ts-pnp');
 
 exports.resolveModuleName = (

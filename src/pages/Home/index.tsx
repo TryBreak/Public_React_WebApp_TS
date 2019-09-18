@@ -1,12 +1,5 @@
-/*
-* @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-07-03 02:20:03
-* @LastEditTime: 2019-07-29 14:42:49
- */
-import React from 'react';
-import { RouterView } from '@/utils/RouterView';
+import React from "react";
+import { RouterView } from "@/utils/RouterView";
 
 export default class extends React.Component<pageProps> {
   render() {

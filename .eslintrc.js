@@ -1,36 +1,79 @@
-/*
- * @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-05-14 15:32:49
- * @LastEditTime: 2019-08-01 17:27:51
- */
-
 module.exports = {
-  extends: ["react-app"],
+  // 让ESLint识别TS
+  parser: "@typescript-eslint/parser",
+  // 采用TS风格指南库
+  plugins: ["@typescript-eslint"],
+  env: {
+    commonjs: true,
+    es6: true,
+    node: true,
+  },
+  // ESLint默认风格指南和TS风格指南混用
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "react-app",
+  ],
   globals: {
-    // 这里填入你的项目需要的全局变量
-    // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
-    // jQuery: false,
-    // $: false
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    SharedArrayBuffer: "readonly",
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    useJSXTextNode: true,
+    project: "./tsconfig.json",
   },
   rules: {
+    // react
     "react/jsx-filename-extension": [
-      "error",
-      { extensions: [".js", ".jsx", ".tsx"] }
+      1,
+      {
+        extensions: [".js", ".jsx", ".tsx"],
+      },
     ],
-    //强制return
-    "getter-return": "error",
-    "no-await-in-loop": "error",
-    //条件表达式禁止出现赋值操作
-    "no-cond-assign": "error",
-    //必须使用\n换行
-    "linebreak-style": ["error", "unix"],
-    //使用单引号
-    quotes: ["error", "single"],
-    //console
+    //TS相关
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-angle-bracket-type-assertion": "off",
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        allowDestructuring: true, // Allow `const { props, state } = this`; false by default
+        allowedNames: ["_this"], // Allow `const self = this`; `[]` by default
+      },
+    ],
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/class-name-casing": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    //重点指导
+    "no-var": "error",
+    "arrow-body-style": ["error", "always"],
+    "arrow-parens": ["error", "always"],
+    "arrow-spacing": "error",
+    "generator-star-spacing": [
+      "error",
+      {
+        before: false,
+        after: true,
+      },
+    ],
+    "no-confusing-arrow": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-computed-key": "error",
+    "no-useless-rename": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "rest-spread-spacing": ["error", "never"],
+    "sort-imports": "off",
+    "template-curly-spacing": "error",
+    "no-multi-spaces": "error",
     "no-console": [
       "warn",
       {
@@ -41,245 +84,151 @@ module.exports = {
           "group",
           "groupCollapsed",
           "groupEnd",
-          "table"
-        ]
-      }
+          "table",
+        ],
+      },
     ],
-    //禁用常量表达式
-    "no-constant-condition": "error",
-    //正则的控制字符
-    "no-control-regex": "error",
-    "no-debugger": "error",
-    "no-dupe-args": "error",
-    //禁止出现重复的键
-    "no-dupe-keys": "error",
-    //禁止出现重复的 case 标签
-    "no-duplicate-case": "error",
-    //禁止对 catch 子句的参数重新赋值
-    "no-ex-assign": "error",
-    //禁止不必要的布尔类型转换
-    "no-extra-boolean-cast": "error",
-    "no-extra-semi": "error",
-    "no-func-assign": "error",
-    "no-inner-declarations": "error",
-    //必须使用括号包裹箭头函数的参数
-    "arrow-parens": ["error", "always"],
-    //禁止不规则的空白
-    "no-irregular-whitespace": [
+    //ES6相关
+    "prefer-const": "error",
+    "object-shorthand": "error",
+    //node相关
+    "no-buffer-constructor": "error",
+    "no-mixed-requires": "error",
+    "no-new-require": "error",
+    "no-path-concat": "error",
+    "no-process-env": "error",
+    "no-process-exit": "error",
+    //变量声明
+    "no-use-before-define": "error",
+    "no-undefined": "error",
+    "no-label-var": "error",
+    //严格模式
+    strict: "error",
+    //最佳实践
+    yoda: "error",
+    "no-prototype-builtins": "off",
+    "wrap-iife": ["error", "outside"],
+    "vars-on-top": "error",
+    "require-await": "error",
+    radix: "error",
+    "prefer-promise-reject-errors": "error",
+    "no-void": "error",
+    "no-useless-return": "error",
+    "no-useless-concat": "error",
+    "no-unused-expressions": "error",
+    "no-sequences": "error",
+    "no-self-compare": "error",
+    "no-script-url": "error",
+    "no-return-await": "error",
+    "no-return-assign": "error",
+    "no-proto": "error",
+    "no-param-reassign": "error",
+    "no-octal-escape": "error",
+    "no-new-wrappers": "error",
+    "no-new-func": "error",
+    "no-new": "error",
+    "no-multi-str": "error",
+    "no-loop-func": "error",
+    "no-lone-blocks": "error",
+    "no-labels": "error",
+    "no-iterator": "error",
+    "no-implicit-globals": "error",
+    "no-implicit-coercion": "error",
+    "no-floating-decimal": "error",
+    "no-extra-label": "error",
+    "no-extend-native": "error",
+    "no-eval": "error",
+    "no-eq-null": "error",
+    "no-div-regex": "error",
+    "no-caller": "error",
+    "no-alert": "warn",
+    "guard-for-in": "error",
+    eqeqeq: ["error", "always"],
+    "dot-location": ["error", "property"],
+    "default-case": "error",
+    curly: "error",
+    "accessor-pairs": "error",
+    "consistent-return": "error",
+    complexity: ["error", 10],
+    "block-scoped-var": "error",
+    //风格指导
+    "array-bracket-newline": ["error", "consistent"],
+    "array-bracket-spacing": "error",
+    "array-element-newline": ["error", { multiline: true, minItems: 3 }],
+    "block-spacing": "error",
+    "brace-style": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": ["error", { before: false, after: true }],
+    "comma-style": "error",
+    "computed-property-spacing": "error",
+    "consistent-this": ["error", "_this"],
+    "eol-last": "error",
+    "func-call-spacing": "error",
+    "id-length": ["error", { min: 1 }],
+    "implicit-arrow-linebreak": ["error", "beside"],
+    indent: ["error", 2, { SwitchCase: 1 }],
+    "jsx-quotes": "error",
+    "key-spacing": "error",
+    "keyword-spacing": "error",
+    "linebreak-style": ["error", "unix"],
+    "lines-between-class-members": ["error", "always"],
+    "no-multiple-empty-lines": "error",
+    "max-depth": ["error", 3],
+    "max-lines-per-function": ["error", 200],
+    "max-nested-callbacks": ["error", 3],
+    "max-params": ["error", 3],
+    "multiline-ternary": ["error", "never"],
+    "new-parens": "error",
+    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
+    "no-array-constructor": "error",
+    "no-bitwise": "error",
+    "no-mixed-operators": "error",
+    "no-multi-assign": "error",
+    "no-negated-condition": "error",
+    "no-nested-ternary": "error",
+    "no-new-object": "error",
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+    "no-whitespace-before-property": "error",
+    "no-unneeded-ternary": "error",
+    "object-curly-newline": [
       "error",
       {
-        skipStrings: true,
-        skipComments: true,
-        skipTemplates: true,
-        skipRegExps: true
-      }
+        ObjectPattern: {
+          multiline: true,
+        },
+      },
     ],
-    "no-obj-calls": "error",
-    //禁止直接调用 Object.prototypes 的内置属性
-    // 'no-prototype-builtins': 'error',
-    //正则表达式多个空格
-    "no-regex-spaces": "error",
-    //禁用稀疏数组
-    "no-sparse-arrays": "error",
-    //禁止出现令人困惑的多行表达式
-    "no-unexpected-multiline": "error",
-    //警告return后的语句
-    "no-unreachable": "warn",
-    //控制流语句规范
-    "no-unsafe-finally": "error",
-    //善用感叹号
-    "no-unsafe-negation": "error",
-    //强制 generator 函数
-    "generator-star-spacing": ["error", { before: false, after: true }],
-    //函数空格的问题
+    "object-property-newline": "error",
+    "one-var": ["error", "never"],
+    "one-var-declaration-per-line": "error",
+    "operator-assignment": "error",
+    "operator-linebreak": "error",
+    "prefer-object-spread": "error",
+    "quote-props": ["error", "as-needed"],
+    quotes: "error",
+    semi: ["error", "always"],
+    "semi-spacing": "error",
+    "semi-style": "error",
+    "sort-vars": "error",
+    "space-before-blocks": "error",
     "space-before-function-paren": [
       "error",
       {
         anonymous: "always",
         named: "never",
-        asyncArrow: "always"
-      }
+        asyncArrow: "always",
+      },
     ],
-    "use-isnan": "error",
-    "valid-typeof": ["error", { requireStringLiterals: true }],
-    //分号
-    semi: ["error", "always"],
-    "semi-spacing": ["error", { before: false, after: true }],
-    "semi-style": ["error", "last"],
-    //禁止导入重复模块
-    "no-duplicate-imports": "error",
-    //jsx中使用单引号
-    "jsx-quotes": ["error", "prefer-double"],
-    //括号内空格
     "space-in-parens": ["error", "never"],
-    //禁止使用嵌套的三元表达式
-    "no-nested-ternary": "error",
-    //禁止混合缩进
-    "no-mixed-spaces-and-tabs": "error",
-    //空格缩进
-    indent: ["error", 2, { SwitchCase: 1 }],
-    //调用构造函数必须带括号
-    "new-parens": "error",
-    //多行注释风格
-    // 'multiline-comment-style': ['error', 'starred-block'],
-    //this别名
-    "consistent-this": ["error", "_this"],
-    //大括号风格
-    "brace-style": "error",
-    //拖尾逗号
-    "comma-dangle": ["error", "always-multiline"],
-    //正则表达式必须被括起来
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "switch-colon-spacing": "error",
+    "template-tag-spacing": "error",
+    "unicode-bom": "error",
     "wrap-regex": "error",
-    //不要省地方
-    "arrow-spacing": "error",
-    //标记无效或缺失的 super() 调用
-    "constructor-super": "error",
-    //操作符和箭头函数混用
-    "no-confusing-arrow": "error",
-    //九年制调用 super() 之前使用 this 或 super
-    "no-this-before-super": "error",
-    //不要玩花
-    "no-useless-computed-key": "error",
-    //避免新手问题
-    "no-new-symbol": "error",
-    //不要使用var
-    "no-var": "error",
-    //简写
-    "object-shorthand": "error",
-    //必须要有 yield
-    "require-yield": "error",
-    //不要省地方
-    "rest-spread-spacing": ["error", "never"],
-    //不要省括号
-    curly: "error",
-    //switch
-    "default-case": "error",
-    //点点和操作符
-    "dot-location": ["error", "property"],
-    //恒等号
-    eqeqeq: ["error", "always"],
-    //for-in 中必须判断
-    "guard-for-in": "error",
-    //alert
-    // 'no-alert': 'error',
-    "no-caller": "error",
-    //switch 词法声明
-    "no-case-declarations": "error",
-    //消除正则则表达式歧义
-    "no-div-regex": "error",
-    //结构不能为空
-    "no-empty-pattern": "error",
-    //禁止 null 比较
-    "no-eq-null": "error",
-    //禁止 eval
-    "no-eval": "error",
-    //禁止扩展原生类型
-    "no-extend-native": "error",
-    //禁止不必要的标签
-    "no-extra-label": "error",
-    //switch
-    "no-fallthrough": "error",
-    //禁用浮点小数
-    "no-floating-decimal": "error",
-    //禁止改变原生对象的值
-    "no-global-assign": "error",
-    //禁止使用短符号进行类型转换
-    "no-implicit-coercion": "error",
-    //禁止在全局范围使用变量和函数声明
-    "no-implicit-globals": "error",
-    //禁用迭代器
-    "no-iterator": "error",
-    "no-labels": "error",
-    "no-lone-blocks": "error",
-    "no-loop-func": "error",
-    //多空格问题
-    "no-multi-spaces": "error",
-    //多行字符串
-    "no-multi-str": "error",
-    "no-new": "error",
-    //禁用Function构造函数
-    "no-new-func": "error",
-    //禁止原始包装实例
-    "no-new-wrappers": "error",
-    //禁用八进制字面量
-    "no-octal": "error",
-    //禁止对函数参数再赋值
-    "no-param-reassign": "error",
-    //禁用__proto__
-    "no-proto": "error",
-    //禁止多次声明同一个变量
-    "no-redeclare": "error",
-    //return禁止赋值
-    "no-return-assign": ["error", "always"],
-    //禁止return await
-    "no-return-await": "error",
-    "no-script-url": "error",
-    "no-self-assign": "error",
-    "no-self-compare": "error",
-    "no-sequences": "error",
-    //禁止未使用过的表达式
-    "no-unused-expressions": "error",
-    "no-useless-concat": "error",
-    //void
-    "no-void": "error",
-    //禁用 with 语句
-    "no-with": "error",
-    //要求使用 Error 对象作为 Promise 拒绝的原因
-    "prefer-promise-reject-errors": "error",
-    //要求必须有基数 parseInt
-    radix: "error",
-    //禁止使用不带 await 表达式的 async 函数
-    "require-await": "error",
-    //var 必须在作用域顶部
-    "vars-on-top": "error",
-    //需要把立即执行的函数包裹起来
-    "wrap-iife": ["error", "outside"],
-    // if Yoda 条件
-    yoda: "error",
-    //禁止删除变量
-    "no-delete-var": "error",
-    "no-shadow-restricted-names": "error",
-    "no-undef": "error",
-    "no-undefined": "error",
-    "no-unused-vars": "warn",
-    "no-use-before-define": "error",
-    //数组括号
-    "array-bracket-newline": ["error", "consistent"],
-    "array-bracket-spacing": ["error", "never"],
-    "array-element-newline": ["error", { multiline: true, minItems: 3 }],
-    //花括号
-    "block-spacing": "error",
-    "comma-spacing": ["error", { before: false, after: true }],
-    "comma-style": "error",
-    "computed-property-spacing": "error",
-    "eol-last": "error",
-    "implicit-arrow-linebreak": ["error", "beside"],
-    "key-spacing": "error",
-    //最大三层嵌套
-    "max-nested-callbacks": ["error", 3],
-    //最大参数数量 , 多余的参数应该使用解构
-    "max-params": ["error", 3],
-    "no-array-constructor": "error",
-    "no-mixed-operators": "error",
-    "no-multi-assign": "error",
-    "no-negated-condition": "error",
-    "no-new-object": "error",
-    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
-    "object-curly-newline": [
-      "error",
-      {
-        ObjectPattern: { multiline: true }
-      }
-    ],
-    "arrow-body-style": ["error", "always"],
-    "no-dupe-class-members": "error",
-    "no-const-assign": "error",
-    "no-class-assign": "error",
-    "no-useless-rename": "error",
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "prefer-template": "error",
-    "sort-imports": "off"
-  }
+  },
 };
-// 详细规则说明请查看 http://eslint.cn/docs/rules/
+
+// https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+
+// https://cn.eslint.org/docs/rules/

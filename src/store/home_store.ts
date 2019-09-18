@@ -1,12 +1,13 @@
-import { observable, action, computed } from 'mobx';
+import { observable, action, computed } from "mobx";
 
 class HomeStore {
   @observable text: any;
+
   @observable num: any;
 
   constructor() {
     this.num = 0;
-    this.text = 'Hello Word!';
+    this.text = "Hello Word!";
   }
 
   @action
@@ -21,6 +22,7 @@ class HomeStore {
   change = (str: any) => {
     this.text = str;
   };
+
   @computed
   get plusNum() {
     return this.num + 5;

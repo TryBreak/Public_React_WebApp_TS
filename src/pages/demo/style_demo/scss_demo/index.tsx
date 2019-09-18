@@ -1,13 +1,6 @@
-/*
- * @LastEditors: Mark
- * @Description: In User Settings Edit
- * @Author: Mark
- * @Date: 2019-04-14 14:18:16
- * @LastEditTime: 2019-07-03 02:55:52
- */
-import React, { Component } from 'react';
-import styles from './index.module.scss';
-import image14 from '@/assets/image/14.jpg';
+import React, { Component } from "react";
+import styles from "./index.module.scss";
+import image14 from "@/assets/image/14.jpg";
 
 export default class extends Component {
   render() {
@@ -15,7 +8,7 @@ export default class extends Component {
       <div className={styles.wrapper}>
         <h1>这里是 scss_demo ,这里是三级路由</h1>
         img标签引用:
-        <img src={require('@/assets/image/13.jpg')} alt="" />
+        <img src={require("@/assets/image/13.jpg")} alt="" />
         <img src={image14} alt="image14" />
         css使用
         <div className={styles.cover} />

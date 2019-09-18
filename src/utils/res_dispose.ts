@@ -2,7 +2,7 @@
 export const res_dispose = (response: any) => {
   const data = response.data;
   switch (data.code) {
-    case 'OK':
+    case "OK":
       break;
     default:
       // Toast.fail(data.message, 1);

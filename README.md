@@ -1,4 +1,4 @@
-# one-react-ts-web 项目说明
+# quick-work-react-app 项目说明
 
 基层脚手架仓库地址 <https://github.com/facebook/create-react-app>
 

@@ -1,11 +1,3 @@
-/*
-* @LastEditors: Mark
- * @Description: none
- * @Author: Mark
- * @Date: 2019-07-02 21:46:26
-* @LastEditTime: 2019-08-01 19:43:20
- */
-
 declare interface versionList {
   readonly [index: number]: {
     code: string;
@@ -32,10 +24,9 @@ declare interface pageProps {
   };
 }
 
-
 declare interface ajax_param {
   readonly url: string;
   data: {} | string;
-  readonly method: 'get' | 'post';
+  readonly method: "get" | "post";
   [propName: string]: any;
 }

@@ -1,15 +1,15 @@
-import React from 'react';
-import { observer, inject } from 'mobx-react';
+import React from "react";
+import { observer, inject } from "mobx-react";
 
-interface moduleProps extends pageProps {
-}
+interface moduleProps extends pageProps {}
 
-@inject('store') // 将store注入到当前组件中
+@inject("store") // 将store注入到当前组件中
 @observer // 将该组件变成响应式组件
 class MobxTest2 extends React.Component<moduleProps> {
   handleClick = () => {
     this.props.store.otherStore.getData();
   };
+
   render() {
     return (
       <div>

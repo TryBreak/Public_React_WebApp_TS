@@ -1,24 +1,17 @@
-/*
- * @LastEditors: Mark
- * @Description: In User Settings Edit
- * @Author: Mark
- * @Date: 2019-05-07 17:08:16
- * @LastEditTime: 2019-05-07 17:10:44
- */
-import icon_1 from './1.png';
-import icon_1_active from './1-active.png';
+import icon_1 from "./1.png";
+import icon_1_active from "./1-active.png";
 
-import icon_2 from './2.png';
-import icon_2_active from './2-active.png';
+import icon_2 from "./2.png";
+import icon_2_active from "./2-active.png";
 
-import icon_3 from './3.png';
-import icon_3_active from './3-active.png';
+import icon_3 from "./3.png";
+import icon_3_active from "./3-active.png";
 
-import icon_4 from './4.png';
-import icon_4_active from './4-active.png';
+import icon_4 from "./4.png";
+import icon_4_active from "./4-active.png";
 
-import icon_5 from './5.png';
-import icon_5_active from './5-active.png';
+import icon_5 from "./5.png";
+import icon_5_active from "./5-active.png";
 
 export const tab_icon = {
   icon_1,
