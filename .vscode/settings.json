@@ -1,9 +1,10 @@
 {
+  "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "eslint.autoFixOnSave": true,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
