@@ -154,7 +154,7 @@ module.exports = {
     //风格指导
     "array-bracket-newline": ["error", "consistent"],
     "array-bracket-spacing": "error",
-    "array-element-newline": ["error", { multiline: true, minItems: 3 }],
+    "array-element-newline": ["error", "consistent"],
     "block-spacing": "error",
     "brace-style": "error",
     "comma-dangle": ["error", "always-multiline"],
@@ -211,14 +211,6 @@ module.exports = {
     "semi-style": "error",
     "sort-vars": "error",
     "space-before-blocks": "error",
-    "space-before-function-paren": [
-      "error",
-      {
-        anonymous: "always",
-        named: "never",
-        asyncArrow: "always",
-      },
-    ],
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",
     "space-unary-ops": "error",
