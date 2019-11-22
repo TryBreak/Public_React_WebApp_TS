@@ -159,6 +159,7 @@ module.exports = {
     "eol-last": "error",
     "func-call-spacing": "error",
     "id-length": ["error", { min: 1 }],
+    "max-params": ["error", 3],
     "implicit-arrow-linebreak": ["error", "beside"],
     indent: ["error", 2, { SwitchCase: 1 }],
     "jsx-quotes": ["error", "prefer-double"],
