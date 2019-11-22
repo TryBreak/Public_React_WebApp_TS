@@ -35,12 +35,12 @@ const $axios_set_default = () => {
 
   //响应拦截
   service.interceptors.response.use(
-    (response) => {
+    (response: any) => {
       // console.info('请求结束');
       // Toast.hide();
       return res_dispose(response);
     },
-    (error) => {
+    (error: any) => {
       return Promise.reject(error);
     },
   );

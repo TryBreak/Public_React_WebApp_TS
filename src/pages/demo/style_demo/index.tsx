@@ -10,21 +10,19 @@ export default class extends React.Component<pageProps> {
     const routes = route && route.routes;
     const linkList = [];
     for (const key in routes) {
-      if (routes.hasOwnProperty(key)) {
-        const el = routes[key];
-        linkList.push(
-          <Link
-            to={key}
-            key={key}
-            style={{
-              display: "block",
-              margin: "10px",
-            }}
-          >
-            {el.name}
-          </Link>,
-        );
-      }
+      const el = routes[key];
+      linkList.push(
+        <Link
+          to={key}
+          key={key}
+          style={{
+            display: "block",
+            margin: "10px",
+          }}
+        >
+          {el.name}
+        </Link>,
+      );
     }
     return linkList;
   };

@@ -14,6 +14,13 @@ const routes: routes = {
       },
     },
   },
+
+  "/detail": {
+    name: "这里是详情页面",
+    title: "",
+    describe: "详情页面",
+  },
+
   "/demo": {
     name: "demo页面",
     title: "演示页面",

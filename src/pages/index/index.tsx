@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
 import styles_scss from "./index.module.scss";
-import styles_less from "./index.module.less";
 import { Link } from "react-router-dom";
 
 const index: React.FC = () => {
@@ -9,7 +8,7 @@ const index: React.FC = () => {
     <div className={styles_scss.App}>
       <header className={styles_scss["App-header"]}>
         <a
-          className={styles_less.githubLink}
+          className={styles_scss.githubLink}
           href="https://github.com/meichangliang/Public_React_WebApp_TS"
           target="_blank"
           rel="noopener noreferrer"
@@ -33,7 +32,7 @@ const index: React.FC = () => {
           Learn React
         </a>
         <a
-          className={styles_less["TS-link"]}
+          className={styles_scss["TS-link"]}
           href="http://www.typescriptlang.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +40,7 @@ const index: React.FC = () => {
           Learn TypeScript
         </a>
         <a
-          className={styles_less.githubLink}
+          className={styles_scss.githubLink}
           href="https://github.com/meichangliang/Public_React_WebApp_TS"
           target="_blank"
           rel="noopener noreferrer"

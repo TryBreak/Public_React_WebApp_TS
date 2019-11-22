@@ -1,39 +1,38 @@
 module.exports = {
-  // 让ESLint识别TS
   parser: "@typescript-eslint/parser",
-  // 采用TS风格指南库
-  plugins: ["@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "prettier"],
   env: {
+    browser: true,
     commonjs: true,
     es6: true,
     node: true,
   },
-  // ESLint默认风格指南和TS风格指南混用
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "react-app",
+    "plugin:prettier/recommended",
+    "prettier",
   ],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 2018,
+    sourceType: "module",
     useJSXTextNode: true,
     project: "./tsconfig.json",
   },
   rules: {
-    // react
-    "react/jsx-filename-extension": [
-      1,
-      {
-        extensions: [".js", ".jsx", ".tsx"],
-      },
-    ],
+    "prettier/prettier": "error",
     //TS相关
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-empty-function": "off",
@@ -96,17 +95,14 @@ module.exports = {
     "no-mixed-requires": "error",
     "no-new-require": "error",
     "no-path-concat": "error",
-    "no-process-env": "error",
     "no-process-exit": "error",
     //变量声明
-    "no-use-before-define": "error",
     "no-undefined": "error",
     "no-label-var": "error",
     //严格模式
     strict: "error",
     //最佳实践
     yoda: "error",
-    "no-prototype-builtins": "off",
     "wrap-iife": ["error", "outside"],
     "vars-on-top": "error",
     "require-await": "error",
@@ -142,14 +138,12 @@ module.exports = {
     "no-div-regex": "error",
     "no-caller": "error",
     "no-alert": "warn",
-    "guard-for-in": "error",
     eqeqeq: ["error", "always"],
     "dot-location": ["error", "property"],
     "default-case": "error",
     curly: "error",
     "accessor-pairs": "error",
     "consistent-return": "error",
-    complexity: ["error", 10],
     "block-scoped-var": "error",
     //风格指导
     "array-bracket-newline": ["error", "consistent"],
@@ -173,13 +167,8 @@ module.exports = {
     "linebreak-style": ["error", "unix"],
     "lines-between-class-members": ["error", "always"],
     "no-multiple-empty-lines": "error",
-    "max-depth": ["error", 3],
-    "max-lines-per-function": ["error", 200],
-    "max-nested-callbacks": ["error", 3],
-    "max-params": ["error", 3],
     "multiline-ternary": ["error", "never"],
     "new-parens": "error",
-    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
     "no-array-constructor": "error",
     "no-bitwise": "error",
     "no-mixed-operators": "error",
@@ -190,14 +179,6 @@ module.exports = {
     "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
     "no-whitespace-before-property": "error",
     "no-unneeded-ternary": "error",
-    "object-curly-newline": [
-      "error",
-      {
-        ObjectPattern: {
-          multiline: true,
-        },
-      },
-    ],
     "object-property-newline": "error",
     "one-var": ["error", "never"],
     "one-var-declaration-per-line": "error",

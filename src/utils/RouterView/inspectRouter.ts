@@ -49,12 +49,10 @@ function formatRouteList(routes: routes): Array<routeData> {
   const routeList = [];
   // 这里判断例外条件
   for (const key in routes) {
-    if (routes.hasOwnProperty(key)) {
-      const el = routes[key];
-      if (key !== "/" && key !== "*") {
-        const router = filterRouter(key, el);
-        routeList.push(router);
-      }
+    const el = routes[key];
+    if (key !== "/" && key !== "*") {
+      const router = filterRouter(key, el);
+      routeList.push(router);
     }
   }
   //优先进行精确查找
