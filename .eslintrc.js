@@ -1,6 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint", "prettier"],
+  plugins: ["react", "@typescript-eslint"],
   env: {
     browser: true,
     commonjs: true,
@@ -13,7 +13,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
-    "prettier",
   ],
   globals: {
     Atomics: "readonly",
@@ -29,7 +28,6 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
-    "prettier/prettier": "error",
     //TS相关
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
