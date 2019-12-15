@@ -1,0 +1,46 @@
+@import '../table.less';
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rightBox {
+  flex-grow: 1;
+  .people {
+    display: flex;
+    justify-content: space-around;
+    .ultBox,
+    .labelBox {
+      min-width: 100px;
+      min-height: 30px;
+      flex: 1;
+      border: 1px solid #fff;
+      padding: 6px;
+    }
+    .labelBox {
+      .center();
+    }
+  }
+}
+.roleBox {
+  background-color: #fff;
+  border: 1px solid #000 !important;
+}
+.eventBox {
+  background-color: #b4c6e7;
+  border: 1px solid #000 !important;
+}
+.eventItem {
+  background-color: #b4c6e7;
+}
+
+.ultBox {
+  .eventView {
+    margin: 8px;
+  }
+  .peopleView {
+    display: inline-block;
+    margin: 4px 6px;
+  }
+}
