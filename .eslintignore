@@ -4,3 +4,6 @@
 /scripts/
 *.html
 serviceWorker.*
+
+/home/weekly/
+/mark_modules/
