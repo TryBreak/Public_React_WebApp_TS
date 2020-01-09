@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class extends React.Component<pageProps> {
+export default class Demo extends React.Component<pageProps> {
   render() {
     return (
       <div>

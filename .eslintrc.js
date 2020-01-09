@@ -1,31 +1,25 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["react", "@typescript-eslint"],
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true,
-  },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["plugin:react/recommended", "react-app"],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
+    SharedArrayBuffer: "readonly"
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2018,
     sourceType: "module",
     useJSXTextNode: true,
-    project: "./tsconfig.json",
+    project: "./tsconfig.json"
+  },
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true
   },
   rules: {
     //TS相关
@@ -40,8 +34,8 @@ module.exports = {
       "error",
       {
         allowDestructuring: true, // Allow `const { props, state } = this`; false by default
-        allowedNames: ["_this"], // Allow `const self = this`; `[]` by default
-      },
+        allowedNames: ["_this"] // Allow `const self = this`; `[]` by default
+      }
     ],
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-unused-vars": "off",
@@ -55,8 +49,8 @@ module.exports = {
       "error",
       {
         before: false,
-        after: true,
-      },
+        after: true
+      }
     ],
     "no-confusing-arrow": "error",
     "no-duplicate-imports": "error",
@@ -79,9 +73,9 @@ module.exports = {
           "group",
           "groupCollapsed",
           "groupEnd",
-          "table",
-        ],
-      },
+          "table"
+        ]
+      }
     ],
     //ES6相关
     "prefer-const": "error",
@@ -195,8 +189,8 @@ module.exports = {
     "switch-colon-spacing": "error",
     "template-tag-spacing": "error",
     "unicode-bom": "error",
-    "wrap-regex": "error",
-  },
+    "wrap-regex": "error"
+  }
 };
 
 // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin

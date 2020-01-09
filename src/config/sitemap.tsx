@@ -34,7 +34,7 @@ const Navigation = (props: moduleProps) => {
   );
 };
 
-export default class extends React.Component {
+export default class Sitemap extends React.Component {
   render() {
     return (
       <div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { RouterView } from "@/utils/RouterView";
 
-export default class extends React.Component<pageProps> {
+export default class Demo extends React.Component<pageProps> {
   render() {
     const { match } = this.props;
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./index.module.scss";
 import image14 from "@/assets/image/14.jpg";
 
-export default class extends Component {
+export default class Demo extends Component {
   render() {
     return (
       <div className={styles.wrapper}>

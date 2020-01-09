@@ -33,54 +33,6 @@ npm run local-serve
 
 - Prettier
 
-### settings.json 设置
-
-```json
-{
-  "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "eslint.autoFixOnSave": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
-  ]
-}
-```
-
 ## 脚手架定制化
 
 基于 `react-creat-app` 做了如下个性化定制
@@ -91,21 +43,14 @@ npm run local-serve
 
 - 添加 `.env` 设定环境变量
 
-- 新增 `react-router-dom` 实现路由跳转
-
-  - 采用配置文件的形式管理路由
-
-  - 编写 reouterView 插件机制,采用中心化路由管理模式控制路由
-
 - 修改 `public\index.html`
 
   - 新增 meta
 
 - css 预处理器配置
 
-  - 配置 less , scss , css 的模块化设置
-  - 支持 less 以及 scss
-  - 推荐使用 scss
+  - 配置 scss , css 的模块化设置
+  - 支持 scss
 
 - eslint 配置
 
@@ -237,9 +182,8 @@ css 中使用需要添加 `~` 为前缀:
 {
   "compilerOptions": {
     "target": "es5",
-    "experimentalDecorators": true,
     "lib": ["dom", "dom.iterable", "esnext"],
-    "noImplicitAny": true,
+    "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -251,16 +195,13 @@ css 中使用需要添加 `~` 为前缀:
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["src"],
-  "strictNullChecks": true,
-  "removeComments": true,
-  "module": "esnext"
+  "include": ["src"]
 }
 ```
 

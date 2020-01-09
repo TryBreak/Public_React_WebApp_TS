@@ -1,7 +1,7 @@
 import React from "react";
 import { getRecommendList } from "@/api/demo";
 
-export default class extends React.Component {
+export default class Demo extends React.Component {
   getRecommendList = async () => {
     const data: any = await getRecommendList({
       count: 5,

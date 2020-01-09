@@ -1,7 +1,7 @@
 import React from "react";
 import MobxTest1 from "./module/MobxTest1";
 import MobxTest2 from "./module/MobxTest2";
-export default class extends React.Component<pageProps> {
+export default class Demo extends React.Component<pageProps> {
   render() {
     return (
       <div className="Demo">

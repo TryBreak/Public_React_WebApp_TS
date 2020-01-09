@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { RouterView, findRoute } from "@/utils/RouterView";
 
-export default class extends React.Component<pageProps> {
+export default class Demo extends React.Component<pageProps> {
   linkList = () => {
     const { match } = this.props;
     const route = findRoute(match.path);
