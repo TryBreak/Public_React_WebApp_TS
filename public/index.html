@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no"
@@ -30,20 +30,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title></title>
-    <script>
-      //兼容 ie9
-      if (window["context"] === undefined) {
-        if (!window.location.origin) {
-          window.location.origin =
-            window.location.protocol +
-            "//" +
-            window.location.hostname +
-            (window.location.port ? ":" + window.location.port : "");
-        }
-        window["context"] = location.origin + "/V6.0";
-      }
-      //兼容 ie9 === end
-    </script>
+    <script src="%PUBLIC_URL%/mark_comm/comm.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
