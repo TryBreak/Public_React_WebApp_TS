@@ -1,7 +1,7 @@
 import React from "react";
 
 //路由模式切换
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { HashRouter as Router,  Route } from 'react-router-dom';
 //路由模式切换 -- end
 
@@ -41,9 +41,40 @@ class BaseRouter extends React.Component<pageProps> {
     }
   };
 
+  /*
+    在这里你完全可以采用两种路由管理模式:
+    使用 `RouterView` 组件并将配置文件写在 `src/pages/routes.ts`:
+  */
   render() {
     return <RouterView path="" />;
   }
+  // 或者采用传统方式:
+  // render() {
+  //   return (
+  //     <Switch>
+  //       <Route
+  //         exact={true}
+  //         path="/"
+  //         component={require("@/pages/index").default}
+  //       />
+  //       <Route
+  //         exact={true}
+  //         path="/detail"
+  //         component={require("@/pages/detail").default}
+  //       />
+  //       <Route
+  //         exact={true}
+  //         path="/demo/hello_ts"
+  //         component={require("@/pages/demo/hello_ts").default}
+  //       />
+  //       <Route
+  //         exact={true}
+  //         path="*"
+  //         component={require("@/pages/404").default}
+  //       />
+  //     </Switch>
+  //   );
+  // }
 }
 
 class App extends React.Component {

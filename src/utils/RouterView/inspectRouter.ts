@@ -73,6 +73,7 @@ function filterRouter(path: string, el: route): routeData {
   if (el.component) {
     module = el.component;
   } else {
+    //
     let module_path = path;
     if (path === "/") {
       module_path = "/index";
@@ -82,6 +83,7 @@ function filterRouter(path: string, el: route): routeData {
     }
     module_path = module_path.replace("/*", "/404");
     module = require(`@/pages${module_path}`);
+    //
   }
 
   if (module && module.default) {
