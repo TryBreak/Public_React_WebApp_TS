@@ -9,14 +9,15 @@ export const getUrlParam = (url = "") => {
    * @param null
    * @return: {*}
    */
-  const search: string = url && window.location.search;
+  const search: string = url || window.location.search;
+
   return Qs.parse(search, { ignoreQueryPrefix: true });
 };
 
-export const moneyNum = (num: string | number) => {
+export const moneyNum = (num: string | number): string => {
   if (Number(num)) {
     return Number(num).toFixed(2);
   } else {
-    console.error(`${num}价格有问题`);
+    return "0.00";
   }
 };

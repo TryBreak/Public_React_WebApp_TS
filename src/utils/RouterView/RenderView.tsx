@@ -11,7 +11,6 @@ class RenderView extends Component<PropsType> {
   render() {
     const { path } = this.props;
     const routerList = getRouterList(path);
-
     if (!routerList) {
       return null;
     }
