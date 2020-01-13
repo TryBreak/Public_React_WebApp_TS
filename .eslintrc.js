@@ -4,22 +4,22 @@ module.exports = {
   extends: ["plugin:react/recommended", "react-app"],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    SharedArrayBuffer: "readonly",
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
     sourceType: "module",
     useJSXTextNode: true,
-    project: "./tsconfig.json"
+    project: "./tsconfig.json",
   },
   env: {
     browser: true,
     commonjs: true,
     es6: true,
-    node: true
+    node: true,
   },
   rules: {
     //TS相关
@@ -34,8 +34,8 @@ module.exports = {
       "error",
       {
         allowDestructuring: true, // Allow `const { props, state } = this`; false by default
-        allowedNames: ["_this"] // Allow `const self = this`; `[]` by default
-      }
+        allowedNames: ["_this"], // Allow `const self = this`; `[]` by default
+      },
     ],
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-unused-vars": "off",
@@ -49,8 +49,8 @@ module.exports = {
       "error",
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     "no-confusing-arrow": "error",
     "no-duplicate-imports": "error",
@@ -73,9 +73,9 @@ module.exports = {
           "group",
           "groupCollapsed",
           "groupEnd",
-          "table"
-        ]
-      }
+          "table",
+        ],
+      },
     ],
     //ES6相关
     "prefer-const": "error",
@@ -133,7 +133,6 @@ module.exports = {
     "default-case": "error",
     curly: "error",
     "accessor-pairs": "error",
-    "consistent-return": "error",
     "block-scoped-var": "error",
     //风格指导
     "array-bracket-newline": ["error", "consistent"],
@@ -189,8 +188,8 @@ module.exports = {
     "switch-colon-spacing": "error",
     "template-tag-spacing": "error",
     "unicode-bom": "error",
-    "wrap-regex": "error"
-  }
+    "wrap-regex": "error",
+  },
 };
 
 // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
