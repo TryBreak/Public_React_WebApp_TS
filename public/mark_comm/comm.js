@@ -18,11 +18,11 @@ window.markComm = {
       isIOS: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
       isQQ: u2.indexOf("qq/") > -1,
       isMobile: u2.indexOf("mobile") > -1,
-      isPc: !Obj.isMobile,
       isDingTalk: u2.indexOf("dingtalk") > -1,
       isHeda: u2.indexOf("hedan") > -1,
       Hedan_v: versionToNum(u2.split("hedan@")[1]),
     };
+    Obj.isPc = !Obj.isMobile;
 
     if (
       Obj.isWeChat ||
@@ -31,11 +31,11 @@ window.markComm = {
       Obj.isIOS ||
       Obj.isQQ ||
       Obj.isMobile ||
-      Obj.isDingTalk ||
+      Obj.isDingTalk
     ) {
       Obj.isMobile = true;
     } else {
-      Obj.isPc = false;
+      Obj.isPc = true;
     }
 
     return Obj;
@@ -66,21 +66,25 @@ window.markComm = {
     var isBrowser = markComm.browserType();
     htmlElem.style.fontSize = "100px";
     var winW = divObj.offsetWidth;
-    if (isBrowser.isPC) {
-      htmlElem.style.fontSize = "200px";
+    if (isBrowser.isPc) {
+      htmlElem.style.fontSize = "100px";
     } else {
       var fontSizeNum = (100 / screenwidth) * winW;
       var fontSizeRatio = parseInt(
         htmlElem.style.fontSize.replace(/[^0-9]/gi, "") / 100,
         10,
       );
-      htmlElem.style.fontSize = `${fontSizeNum / fontSizeRatio}px`;
+      var pxValue = fontSizeNum / fontSizeRatio;
+      if (pxValue > 200) {
+        pxValue = 200;
+      }
+      htmlElem.style.fontSize = pxValue + "px";
     }
   },
 };
 
 function mar_load(params) {
-  window.markComm.browserType();
+  window.markComm.htmlfontsize(375);
 }
 
 //兼容 ie9
